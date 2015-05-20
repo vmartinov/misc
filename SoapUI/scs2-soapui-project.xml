@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="874d031a-a191-4a8d-9dd8-d28e054304d8" activeEnvironment="Default" name="scs2" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8f3b00f5-e4a1-4897-9621-e1406f73476a" wsaVersion="200508" name="wsHttpEndpoint" type="wsdl" bindingName="{http://tempuri.org/}wsHttpEndpoint" soapVersion="1_2" anonymous="optional" definition="http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl"><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SCSWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:i0="http://FileLocalSCS/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="wsHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://FileLocalSCS/" location="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?wsdl=wsdl0"/>
+  <wsdl:types/>
+  <wsdl:binding name="wsHttpEndpoint" type="i0:ISCSWebService">
+    <wsp:PolicyReference URI="#wsHttpEndpoint_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ValidateTaxpayerAccount2">
+      <soap12:operation soapAction="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerAccount2" style="document"/>
+      <wsdl:input name="ValidateTaxpayerAccount2Request">
+        <soap12:header message="i0:ValidateTaxpayerAccount2Request_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateTaxpayerAccount2Response">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault name="StandardFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault name="XmlSchemaValidationFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTaxpayerForm">
+      <soap12:operation soapAction="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerForm" style="document"/>
+      <wsdl:input name="ValidateTaxpayerFormRequest">
+        <soap12:header message="i0:ValidateTaxpayerFormRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateTaxpayerFormResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault name="StandardFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault name="XmlSchemaValidationFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGBL">
+      <soap12:operation soapAction="http://FileLocalSCS/ISCSWebService/ValidateGBL" style="document"/>
+      <wsdl:input name="ValidateGBLRequest">
+        <soap12:header message="i0:ValidateGBLRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateGBLResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault name="StandardFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault name="XmlSchemaValidationFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRejectionReport">
+      <soap12:operation soapAction="http://FileLocalSCS/ISCSWebService/PaymentRejectionReport" style="document"/>
+      <wsdl:input name="PaymentRejectionReportRequest">
+        <soap12:header message="i0:PaymentRejectionReportRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PaymentRejectionReportResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault name="StandardFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault name="XmlSchemaValidationFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateGBLRenewal">
+      <soap12:operation soapAction="http://FileLocalSCS/ISCSWebService/CalculateGBLRenewal" style="document"/>
+      <wsdl:input name="CalculateGBLRenewalRequest">
+        <soap12:header message="i0:CalculateGBLRenewalRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CalculateGBLRenewalResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault name="XmlSchemaValidationFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault name="StandardFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrintGBL">
+      <soap12:operation soapAction="http://FileLocalSCS/ISCSWebService/PrintGBL" style="document"/>
+      <wsdl:input name="PrintGBLRequest">
+        <soap12:header message="i0:PrintGBLRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PrintGBLResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault name="StandardFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <soap12:operation soapAction="http://FileLocalSCS/ISCSWebService/GetStatement" style="document"/>
+      <wsdl:input name="GetStatementRequest">
+        <soap12:header message="i0:GetStatementRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetStatementResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault name="StandardFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SCSWebService">
+    <wsdl:port name="wsHttpEndpoint" binding="tns:wsHttpEndpoint">
+      <soap12:address location="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://FileLocalSCS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://FileLocalSCS/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://FileLocalSCS/Imports">
+      <xsd:import schemaLocation="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd0" namespace="http://FileLocalSCS/"/>
+      <xsd:import schemaLocation="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd2"/>
+      <xsd:import schemaLocation="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd4" namespace="http://FileLocalSCS/Faults/"/>
+      <xsd:import schemaLocation="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateTaxpayerAccount2Request">
+    <wsdl:part name="parameters" element="tns:ValidateTaxpayerAccount2"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateTaxpayerAccount2Request_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateTaxpayerAccount2Response">
+    <wsdl:part name="parameters" element="tns:ValidateTaxpayerAccount2Response"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxpayerAccount2_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:StandardFault" xmlns:q1="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxpayerAccount2_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:XmlSchemaValidationFault" xmlns:q2="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateTaxpayerFormRequest">
+    <wsdl:part name="parameters" element="tns:ValidateTaxpayerForm"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateTaxpayerFormRequest_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateTaxpayerFormResponse">
+    <wsdl:part name="parameters" element="tns:ValidateTaxpayerFormResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxpayerForm_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:StandardFault" xmlns:q3="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxpayerForm_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:XmlSchemaValidationFault" xmlns:q4="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateGBLRequest">
+    <wsdl:part name="parameters" element="tns:ValidateGBL"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateGBLRequest_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateGBLResponse">
+    <wsdl:part name="parameters" element="tns:ValidateGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateGBL_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:StandardFault" xmlns:q5="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateGBL_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:XmlSchemaValidationFault" xmlns:q6="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentRejectionReportRequest">
+    <wsdl:part name="parameters" element="tns:PaymentRejectionReport"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentRejectionReportRequest_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentRejectionReportResponse">
+    <wsdl:part name="parameters" element="tns:PaymentRejectionReportResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PaymentRejectionReport_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:StandardFault" xmlns:q7="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PaymentRejectionReport_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:XmlSchemaValidationFault" xmlns:q8="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateGBLRenewalRequest">
+    <wsdl:part name="parameters" element="tns:CalculateGBLRenewal"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateGBLRenewalRequest_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="CalculateGBLRenewalResponse">
+    <wsdl:part name="parameters" element="tns:CalculateGBLRenewalResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_CalculateGBLRenewal_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:XmlSchemaValidationFault" xmlns:q9="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_CalculateGBLRenewal_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:StandardFault" xmlns:q10="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="PrintGBLRequest">
+    <wsdl:part name="parameters" element="tns:PrintGBL"/>
+  </wsdl:message>
+  <wsdl:message name="PrintGBLRequest_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="PrintGBLResponse">
+    <wsdl:part name="parameters" element="tns:PrintGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PrintGBL_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:StandardFault" xmlns:q11="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatementRequest">
+    <wsdl:part name="parameters" element="tns:GetStatement"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatementRequest_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatementResponse">
+    <wsdl:part name="parameters" element="tns:GetStatementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetStatement_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:StandardFault" xmlns:q12="http://FileLocalSCS/Faults/"/>
+  </wsdl:message>
+  <wsdl:portType name="ISCSWebService">
+    <wsdl:operation name="ValidateTaxpayerAccount2">
+      <wsdl:input wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerAccount2" name="ValidateTaxpayerAccount2Request" message="tns:ValidateTaxpayerAccount2Request"/>
+      <wsdl:output wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerAccount2Response" name="ValidateTaxpayerAccount2Response" message="tns:ValidateTaxpayerAccount2Response"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerAccount2StandardFaultFault" name="StandardFaultFault" message="tns:ISCSWebService_ValidateTaxpayerAccount2_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerAccount2XmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:ISCSWebService_ValidateTaxpayerAccount2_XmlSchemaValidationFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTaxpayerForm">
+      <wsdl:input wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerForm" name="ValidateTaxpayerFormRequest" message="tns:ValidateTaxpayerFormRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerFormResponse" name="ValidateTaxpayerFormResponse" message="tns:ValidateTaxpayerFormResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerFormStandardFaultFault" name="StandardFaultFault" message="tns:ISCSWebService_ValidateTaxpayerForm_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerFormXmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:ISCSWebService_ValidateTaxpayerForm_XmlSchemaValidationFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGBL">
+      <wsdl:input wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateGBL" name="ValidateGBLRequest" message="tns:ValidateGBLRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateGBLResponse" name="ValidateGBLResponse" message="tns:ValidateGBLResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateGBLStandardFaultFault" name="StandardFaultFault" message="tns:ISCSWebService_ValidateGBL_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/ValidateGBLXmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:ISCSWebService_ValidateGBL_XmlSchemaValidationFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRejectionReport">
+      <wsdl:input wsaw:Action="http://FileLocalSCS/ISCSWebService/PaymentRejectionReport" name="PaymentRejectionReportRequest" message="tns:PaymentRejectionReportRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalSCS/ISCSWebService/PaymentRejectionReportResponse" name="PaymentRejectionReportResponse" message="tns:PaymentRejectionReportResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/PaymentRejectionReportStandardFaultFault" name="StandardFaultFault" message="tns:ISCSWebService_PaymentRejectionReport_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/PaymentRejectionReportXmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:ISCSWebService_PaymentRejectionReport_XmlSchemaValidationFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateGBLRenewal">
+      <wsdl:input wsaw:Action="http://FileLocalSCS/ISCSWebService/CalculateGBLRenewal" name="CalculateGBLRenewalRequest" message="tns:CalculateGBLRenewalRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalSCS/ISCSWebService/CalculateGBLRenewalResponse" name="CalculateGBLRenewalResponse" message="tns:CalculateGBLRenewalResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/CalculateGBLRenewalXmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:ISCSWebService_CalculateGBLRenewal_XmlSchemaValidationFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/CalculateGBLRenewalStandardFaultFault" name="StandardFaultFault" message="tns:ISCSWebService_CalculateGBLRenewal_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PrintGBL">
+      <wsdl:input wsaw:Action="http://FileLocalSCS/ISCSWebService/PrintGBL" name="PrintGBLRequest" message="tns:PrintGBLRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalSCS/ISCSWebService/PrintGBLResponse" name="PrintGBLResponse" message="tns:PrintGBLResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/PrintGBLStandardFaultFault" name="StandardFaultFault" message="tns:ISCSWebService_PrintGBL_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <wsdl:input wsaw:Action="http://FileLocalSCS/ISCSWebService/GetStatement" name="GetStatementRequest" message="tns:GetStatementRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalSCS/ISCSWebService/GetStatementResponse" name="GetStatementResponse" message="tns:GetStatementResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalSCS/ISCSWebService/GetStatementStandardFaultFault" name="StandardFaultFault" message="tns:ISCSWebService_GetStatement_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://FileLocalSCS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://FileLocalSCS/">
+  <xs:import schemaLocation="http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+  <xs:element name="ValidateTaxpayerAccount2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxpayerAccount2Request" nillable="true" type="tns:ValidateTaxpayerAccount2RequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateTaxpayerAccount2RequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxpayerAccount2RequestDetail" nillable="true" type="tns:ValidateTaxpayerAccount2RequestDetail"/>
+  <xs:element name="ValidateTaxpayerAccount2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxpayerAccount2Result" nillable="true" type="tns:ValidateTaxpayerAccount2ResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateTaxpayerAccount2ResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="q1:Code" xmlns:q1="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxpayerAccount2ResponseDetail" nillable="true" type="tns:ValidateTaxpayerAccount2ResponseDetail"/>
+  <xs:element name="ValidateTaxpayerForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxpayerFormRequest" nillable="true" type="tns:ValidateTaxPayerFormRequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateTaxPayerFormRequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxPayerFormRequestDetail" nillable="true" type="tns:ValidateTaxPayerFormRequestDetail"/>
+  <xs:element name="ValidateTaxpayerFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxpayerFormResult" nillable="true" type="tns:ValidateTaxpayerFormResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateTaxpayerFormResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxpayerFormResponseDetail" nillable="true" type="tns:ValidateTaxpayerFormResponseDetail"/>
+  <xs:element name="ValidateGBL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateGBLRequest" nillable="true" type="tns:ValidateGBLRequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateGBLRequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateGBLRequestDetail" nillable="true" type="tns:ValidateGBLRequestDetail"/>
+  <xs:element name="ValidateGBLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateGBLResult" nillable="true" type="tns:ValidateGBLResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateGBLResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateGBLResponseDetail" nillable="true" type="tns:ValidateGBLResponseDetail"/>
+  <xs:element name="PaymentRejectionReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaymentRejectionReportRequest" nillable="true" type="tns:PaymentRejectionReportRequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentRejectionReportRequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentRejectionReportRequestDetail" nillable="true" type="tns:PaymentRejectionReportRequestDetail"/>
+  <xs:element name="PaymentRejectionReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaymentRejectionReportResult" nillable="true" type="tns:PaymentRejectionReportResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PaymentRejectionReportResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseCode" type="q2:ResponseCode" xmlns:q2="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentRejectionReportResponseDetail" nillable="true" type="tns:PaymentRejectionReportResponseDetail"/>
+  <xs:element name="CalculateGBLRenewal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculateGBLRenewalRequest" nillable="true" type="tns:CalculateGBLRenewalRequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CalculateGBLRenewalRequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculateGBLRenewalRequestDetail" nillable="true" type="tns:CalculateGBLRenewalRequestDetail"/>
+  <xs:element name="CalculateGBLRenewalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculateGBLRenewalResult" nillable="true" type="tns:CalculateGBLRenewalResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CalculateGBLRenewalResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculateGBLRenewalResponseDetail" nillable="true" type="tns:CalculateGBLRenewalResponseDetail"/>
+  <xs:element name="PrintGBL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrintGBLRequest" nillable="true" type="tns:PrintGBLRequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PrintGBLRequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UBI" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LicenseYear" type="xs:int"/>
+      <xs:element minOccurs="0" name="Legal_Business_Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Trade_Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="business_address1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="business_address2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="business_city" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="business_state" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="business_zip" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintGBLRequestDetail" nillable="true" type="tns:PrintGBLRequestDetail"/>
+  <xs:element name="PrintGBLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrintGBLResult" nillable="true" type="tns:PrintGBLResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PrintGBLResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="q3:Code" xmlns:q3="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintGBLResponseDetail" nillable="true" type="tns:PrintGBLResponseDetail"/>
+  <xs:element name="GetStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStatementRequest" nillable="true" type="tns:GetStatementRequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetStatementRequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UBI" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StateTaxID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StatementCode" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatementRequestDetail" nillable="true" type="tns:GetStatementRequestDetail"/>
+  <xs:element name="GetStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStatementResult" nillable="true" type="tns:GetStatementResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetStatementResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatementResponseDetail" nillable="true" type="tns:GetStatementResponseDetail"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SCSWcf.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SCSWcf.Response">
+  <xs:simpleType name="Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="FAIL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Code" nillable="true" type="tns:Code"/>
+  <xs:simpleType name="ResponseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="FAIL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseCode" nillable="true" type="tns:ResponseCode"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SCSSoapAuthenticationHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SCSSoapAuthenticationHeader" nillable="true" type="SCSSoapAuthenticationHeader"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://FileLocalSCS/Faults/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://FileLocalSCS/Faults/">
+  <xs:complexType name="StandardFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StandardFault" nillable="true" type="tns:StandardFault"/>
+  <xs:complexType name="XmlSchemaValidationFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="XmlSchemaValidationFault" nillable="true" type="tns:XmlSchemaValidationFault"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint></con:endpoints><con:operation id="73bce702-ad29-4da5-9f25-8b7a5a25349a" isOneWay="false" action="http://FileLocalSCS/ISCSWebService/CalculateGBLRenewal" name="CalculateGBLRenewal" bindingOperationName="CalculateGBLRenewal" type="Request-Response" outputName="CalculateGBLRenewalResponse" inputName="CalculateGBLRenewalRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ca7a875-795f-4e44-af82-89317b2a757c" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalSCS/">\r
+   <soap:Header>\r
+      <SCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AccessKey>?</AccessKey>\r
+      </SCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:CalculateGBLRenewal>\r
+         <!--Optional:-->\r
+         <fil:CalculateGBLRenewalRequest>\r
+            <!--Optional:-->\r
+            <fil:RequestXml>\r
+               <!--You may enter ANY elements at this point-->\r
+            </fil:RequestXml>\r
+         </fil:CalculateGBLRenewalRequest>\r
+      </fil:CalculateGBLRenewal>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalSCS/ISCSWebService/CalculateGBLRenewal"/></con:call></con:operation><con:operation id="f3baeed1-3c68-402e-a347-56339312f7dd" isOneWay="false" action="http://FileLocalSCS/ISCSWebService/GetStatement" name="GetStatement" bindingOperationName="GetStatement" type="Request-Response" outputName="GetStatementResponse" inputName="GetStatementRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="38cebe99-2e76-45f1-a34e-ec1cca5b78ec" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalSCS/">\r
+   <soap:Header>\r
+      <SCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AccessKey>?</AccessKey>\r
+      </SCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:GetStatement>\r
+         <!--Optional:-->\r
+         <fil:GetStatementRequest>\r
+            <!--Optional:-->\r
+            <fil:TaxAccountID>?</fil:TaxAccountID>\r
+            <!--Optional:-->\r
+            <fil:UBI>?</fil:UBI>\r
+            <!--Optional:-->\r
+            <fil:StateTaxID>?</fil:StateTaxID>\r
+            <!--Optional:-->\r
+            <fil:StatementCode>?</fil:StatementCode>\r
+         </fil:GetStatementRequest>\r
+      </fil:GetStatement>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalSCS/ISCSWebService/GetStatement"/></con:call></con:operation><con:operation id="09404c29-ea03-441c-a9ea-da6acc7e4f13" isOneWay="false" action="http://FileLocalSCS/ISCSWebService/PaymentRejectionReport" name="PaymentRejectionReport" bindingOperationName="PaymentRejectionReport" type="Request-Response" outputName="PaymentRejectionReportResponse" inputName="PaymentRejectionReportRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c9ef4311-acce-4fce-b4cb-e537bb3adc09" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalSCS/">\r
+   <soap:Header>\r
+      <SCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AccessKey>Test123</AccessKey>\r
+      </SCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:PaymentRejectionReport>\r
+         <!--Optional:-->\r
+         <fil:PaymentRejectionReportRequest>\r
+            <!--Optional:-->\r
+            <fil:RequestXml>\r
+               <RejectionReport>
+               	<Rejections>
+               		<Rejection>
+               			<FormID>151</FormID>
+               			<ReturnInfoID>1100</ReturnInfoID>
+               			<AccountNumber>25</AccountNumber>
+               			<Amount>900</Amount>
+               		</Rejection>
+               	</Rejections>
+               </RejectionReport>
+            </fil:RequestXml>\r
+         </fil:PaymentRejectionReportRequest>\r
+      </fil:PaymentRejectionReport>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalSCS/ISCS/PaymentRejectionReport" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="315862d8-31c9-4378-8894-4c5bbe2a7d7e" isOneWay="false" action="http://FileLocalSCS/ISCSWebService/PrintGBL" name="PrintGBL" bindingOperationName="PrintGBL" type="Request-Response" outputName="PrintGBLResponse" inputName="PrintGBLRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0caf76e3-038b-4aad-aef9-a2a2d407a5d2" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalSCS/">\r
+   <soap:Header>\r
+      <SCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AccessKey>?</AccessKey>\r
+      </SCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:PrintGBL>\r
+         <!--Optional:-->\r
+         <fil:PrintGBLRequest>\r
+            <!--Optional:-->\r
+            <fil:TaxAccountID>?</fil:TaxAccountID>\r
+            <!--Optional:-->\r
+            <fil:UBI>?</fil:UBI>\r
+            <!--Optional:-->\r
+            <fil:LicenseYear>?</fil:LicenseYear>\r
+            <!--Optional:-->\r
+            <fil:Legal_Business_Name>?</fil:Legal_Business_Name>\r
+            <!--Optional:-->\r
+            <fil:Trade_Name>?</fil:Trade_Name>\r
+            <!--Optional:-->\r
+            <fil:business_address1>?</fil:business_address1>\r
+            <!--Optional:-->\r
+            <fil:business_address2>?</fil:business_address2>\r
+            <!--Optional:-->\r
+            <fil:business_city>?</fil:business_city>\r
+            <!--Optional:-->\r
+            <fil:business_state>?</fil:business_state>\r
+            <!--Optional:-->\r
+            <fil:business_zip>?</fil:business_zip>\r
+         </fil:PrintGBLRequest>\r
+      </fil:PrintGBL>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalSCS/ISCSWebService/PrintGBL" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8714a53f-999e-4f46-b677-4a1bc58c633f" isOneWay="false" action="http://FileLocalSCS/ISCSWebService/ValidateGBL" name="ValidateGBL" bindingOperationName="ValidateGBL" type="Request-Response" outputName="ValidateGBLResponse" inputName="ValidateGBLRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c5213f48-ea51-4b74-850a-37e29bf68515" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalSCS/">\r
+   <soap:Header>\r
+      <SCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AccessKey>Test123</AccessKey>\r
+      </SCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ValidateGBL>\r
+         <!--Optional:-->\r
+         <fil:ValidateGBLRequest>\r
+            <!--Optional:-->\r
+            <fil:RequestXml>\r
+               <!--You may enter ANY elements at this point-->\r
+            </fil:RequestXml>\r
+         </fil:ValidateGBLRequest>\r
+      </fil:ValidateGBL>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalSCS/ISCS/ValidateGBL" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8d427dce-e81c-41a0-84e5-306dbf65309d" isOneWay="false" action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerAccount2" name="ValidateTaxpayerAccount2" bindingOperationName="ValidateTaxpayerAccount2" type="Request-Response" outputName="ValidateTaxpayerAccount2Response" inputName="ValidateTaxpayerAccount2Request" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="980f08f4-fdf0-41a6-83c4-1bf359313a09" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalSCS/">
+   <soap:Header>
+      <SCSSoapAuthenticationHeader>
+         <!--Optional:-->
+         <AccessKey>Test123</AccessKey>
+      </SCSSoapAuthenticationHeader>
+   </soap:Header>
+   <soap:Body>
+      <fil:ValidateTaxpayerAccount2>
+         <!--Optional:-->
+         <fil:ValidateTaxpayerAccount2Request>
+            <!--Optional:-->
+            <fil:RequestXml>
+               <ValidateTaxPayerAccount>
+	               <Primary_TaxAccountID>82700</Primary_TaxAccountID>
+	               <FormCode>BELBO</FormCode>
+	               <FilingFreqCode>Q</FilingFreqCode>
+	               <Primary_UBI>6026310080010073</Primary_UBI>
+	               <LegalName>Corporate, LLC</LegalName>
+	               <TradeName>CorpTrade</TradeName>
+	               <PhysicalAddress>123 Main St</PhysicalAddress>
+	               <PhysicalZip>98121</PhysicalZip>
+	               <PhysicalPhone>206-123-2154</PhysicalPhone>
+	               <Consolidated>1</Consolidated>
+	               <Locations>
+	               	<Location>
+	               		<TaxAccountID>92025</TaxAccountID>
+	               		<UBI>6026310080010294</UBI>
+	               	</Location>
+	               </Locations>
+               </ValidateTaxPayerAccount>
+            </fil:RequestXml>
+         </fil:ValidateTaxpayerAccount2Request>
+      </fil:ValidateTaxpayerAccount2>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalSCS/ISCS/ValidateTaxpayerAccount2" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3f6fc4e5-9908-4a6b-95ad-d2bba5c976fe" isOneWay="false" action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerForm" name="ValidateTaxpayerForm" bindingOperationName="ValidateTaxpayerForm" type="Request-Response" outputName="ValidateTaxpayerFormResponse" inputName="ValidateTaxpayerFormRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4e69fda0-d3b9-4f27-af84-ed3527ba51c5" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalSCS/">
+   <soap:Header>
+      <SCSSoapAuthenticationHeader>
+         <!--Optional:-->
+         <AccessKey>Test123</AccessKey>
+      </SCSSoapAuthenticationHeader>
+   </soap:Header>
+   <soap:Body>
+      <fil:ValidateTaxpayerForm>
+         <!--Optional:-->
+         <fil:ValidateTaxpayerFormRequest>
+            <!--Optional:-->
+            <fil:RequestXml>
+               <TaxPayerForm>
+	               <FormCode>BELBO</FormCode>
+	               <FilingFreqCode>A</FilingFreqCode>
+	               <FilePeriod>03/31/2014</FilePeriod>
+	               <Primary_TaxAccountID>82700</Primary_TaxAccountID>
+	               <Primary_UBI>6026310080010073</Primary_UBI>
+	               <Consolidated>0</Consolidated>
+	               <Locations>
+	               	<Location>
+	               		<TaxAccountID>92025</TaxAccountID>
+	               		<UBI>6026310080010294</UBI>
+	               	</Location>
+	               </Locations>
+               </TaxPayerForm>
+            </fil:RequestXml>
+         </fil:ValidateTaxpayerFormRequest>
+      </fil:ValidateTaxpayerForm>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalSCS/ISCSWebService/ValidateTaxpayerForm" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

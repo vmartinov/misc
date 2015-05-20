@@ -1,0 +1,1843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6504ae2e-c654-4cbf-a8d5-4e1992931659" activeEnvironment="Default" name="PCS-OLD" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="685c83d2-d04b-4f4d-ac38-c3077a9efcab" wsaVersion="200508" name="wsHttpEndpoint" type="wsdl" bindingName="{http://FileLocalPCS/}wsHttpEndpoint" soapVersion="1_2" anonymous="optional" definition="file:/C:/Users/vmartinov.COBNT1/Desktop/PCS_WSDL.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\vmartinov.COBNT1\Desktop\PCS_WSDL.xml"><con:part><con:url>file:\C:\Users\vmartinov.COBNT1\Desktop\PCS_WSDL.xml</con:url><con:content><![CDATA[<wsdl:definitions name="PCS" targetNamespace="http://FileLocalPCS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://FileLocalPCS/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="wsHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://FileLocalPCS/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Data"/>
+      <xs:element name="VersionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="VersionResult" nillable="true" type="tns:VersionResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="VersionResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseString" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="VersionResponseDetail" nillable="true" type="tns:VersionResponseDetail"/>
+      <xs:element name="VersionChangeDescriptionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="VersionChangeDescriptionResult" nillable="true" type="tns:VersionChangeDescriptionResultDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="VersionChangeDescriptionResultDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseString" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="VersionChangeDescriptionResultDetail" nillable="true" type="tns:VersionChangeDescriptionResultDetail"/>
+      <xs:element name="BatchSummaryReport">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BatchSummaryReportRequest" nillable="true" type="tns:BatchSummaryReportRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="BatchSummaryReportRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatchID" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BatchSummaryReportRequestDetail" nillable="true" type="tns:BatchSummaryReportRequestDetail"/>
+      <xs:element name="BatchSummaryReportResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BatchSummaryReportResult" nillable="true" type="tns:BatchSummaryReportResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="BatchSummaryReportResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BatchSummaryReportResponseDetail" nillable="true" type="tns:BatchSummaryReportResponseDetail"/>
+      <xs:element name="CollectorLoginCheck">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CollectorLoginCheckResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CollectorLoginCheckResult" nillable="true" type="tns:CollectorLoginCheckResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="CollectorLoginCheckResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CollectorLoginCheckResponseDetail" nillable="true" type="tns:CollectorLoginCheckResponseDetail"/>
+      <xs:element name="CollectorRtnsToDownload">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CollectorRtnsToDownloadResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CollectorRtnsToDownloadResult" nillable="true" type="tns:CollectorRtnsToDownloadResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="CollectorRtnsToDownloadResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CollectorRtnsToDownloadResponseDetail" nillable="true" type="tns:CollectorRtnsToDownloadResponseDetail"/>
+      <xs:element name="ConfirmDownloadedBatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ConfirmDownloadedBatchRequest" nillable="true" type="tns:ConfirmDownloadedBatchRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ConfirmDownloadedBatchRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatchID" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConfirmDownloadedBatchRequestDetail" nillable="true" type="tns:ConfirmDownloadedBatchRequestDetail"/>
+      <xs:element name="ConfirmDownloadedBatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ConfirmDownloadedBatchResult" nillable="true" type="tns:ConfirmDownloadedBatchResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ConfirmDownloadedBatchResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseCode" type="q1:ResponseCode" xmlns:q1="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Data"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConfirmDownloadedBatchResponseDetail" nillable="true" type="tns:ConfirmDownloadedBatchResponseDetail"/>
+      <xs:element name="ReDownloadReturnBatch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ReDownloadReturnBatchRequest" nillable="true" type="tns:ReDownloadReturnBatchRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ReDownloadReturnBatchRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubBatchID" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ReDownloadReturnBatchRequestDetail" nillable="true" type="tns:ReDownloadReturnBatchRequestDetail"/>
+      <xs:element name="ReDownloadReturnBatchResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ReDownloadReturnBatchResult" nillable="true" type="tns:ReDownloadReturnBatchResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ReDownloadReturnBatchResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ReDownloadReturnBatchResponseDetail" nillable="true" type="tns:ReDownloadReturnBatchResponseDetail"/>
+      <xs:element name="RejectDownloadedReturn">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RejectDownloadedReturnRequest" nillable="true" type="tns:RejectDownloadedReturnRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RejectDownloadedReturnRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReturnInfoID" type="xs:int"/>
+          <xs:element minOccurs="0" name="FormID" type="xs:int"/>
+          <xs:element minOccurs="0" name="RejectReason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RejectDownloadedReturnRequestDetail" nillable="true" type="tns:RejectDownloadedReturnRequestDetail"/>
+      <xs:element name="RejectDownloadedReturnResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RejectDownloadedReturnResult" nillable="true" type="tns:RejectDownloadedReturnResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RejectDownloadedReturnResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseCode" type="q2:ResponseCode" xmlns:q2="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Data"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RejectDownloadedReturnResponseDetail" nillable="true" type="tns:RejectDownloadedReturnResponseDetail"/>
+      <xs:complexType name="InvalidReturnInfoFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InvalidReturnInfoFault" nillable="true" type="tns:InvalidReturnInfoFault"/>
+      <xs:complexType name="FormNotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FormNotFoundFault" nillable="true" type="tns:FormNotFoundFault"/>
+      <xs:complexType name="FormReturnInfoMismatchFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FormReturnInfoMismatchFault" nillable="true" type="tns:FormReturnInfoMismatchFault"/>
+      <xs:element name="ChangeFormStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ChangeFormStatusRequest" nillable="true" type="tns:ChangeFormStatusRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ChangeFormStatusRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReturnInfoID" type="xs:int"/>
+          <xs:element minOccurs="0" name="FormID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatusID" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ChangeFormStatusRequestDetail" nillable="true" type="tns:ChangeFormStatusRequestDetail"/>
+      <xs:element name="ChangeFormStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ChangeFormStatusResult" nillable="true" type="tns:ChangeFormStatusResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ChangeFormStatusResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseCode" type="q3:ResponseCode" xmlns:q3="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Data"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ChangeFormStatusResponseDetail" nillable="true" type="tns:ChangeFormStatusResponseDetail"/>
+      <xs:element name="CreateSecureMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateSecureMsg" nillable="true" type="tns:CreateSecureMsgRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="CreateSecureMsgRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RecipientID" type="xs:int"/>
+          <xs:element minOccurs="0" name="SubjectID" type="xs:int"/>
+          <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NoAttachments" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CreateSecureMsgRequestDetail" nillable="true" type="tns:CreateSecureMsgRequestDetail"/>
+      <xs:element name="CreateSecureMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateSecureMsgResult" nillable="true" type="tns:CreateSecureMsgResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="CreateSecureMsgResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseString" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CreateSecureMsgResponseDetail" nillable="true" type="tns:CreateSecureMsgResponseDetail"/>
+      <xs:element name="GetMessageUsers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetMessageUsersRequest" nillable="true" type="tns:GetMessageUsersRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetMessageUsersRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserTypeID" type="xs:int"/>
+          <xs:element minOccurs="0" name="TaxAccountID" type="xs:int"/>
+          <xs:element minOccurs="0" name="UBI" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetMessageUsersRequestDetail" nillable="true" type="tns:GetMessageUsersRequestDetail"/>
+      <xs:element name="GetMessageUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetMessageUsersResult" nillable="true" type="tns:GetMessageUsersResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetMessageUsersResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseXml" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetMessageUsersResponseDetail" nillable="true" type="tns:GetMessageUsersResponseDetail"/>
+      <xs:element name="UpdateAccountNumber">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateAccountNumberRequest" nillable="true" type="tns:UpdateAccountNumberRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="UpdateAccountNumberRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestXml" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UpdateAccountNumberRequestDetail" nillable="true" type="tns:UpdateAccountNumberRequestDetail"/>
+      <xs:element name="UpdateAccountNumberResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateAccountNumberResult" nillable="true" type="tns:UpdateAccountNumberResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="UpdateAccountNumberResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseString" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UpdateAccountNumberResponseDetail" nillable="true" type="tns:UpdateAccountNumberResponseDetail"/>
+      <xs:element name="ApproveGBL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ApproveGBLRequest" nillable="true" type="tns:ApproveGBLRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ApproveGBLRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestXml" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ApproveGBLRequestDetail" nillable="true" type="tns:ApproveGBLRequestDetail"/>
+      <xs:element name="ApproveGBLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ApproveGBLResult" nillable="true" type="tns:ApproveGBLResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ApproveGBLResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseString" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ApproveGBLResponseDetail" nillable="true" type="tns:ApproveGBLResponseDetail"/>
+      <xs:element name="RenewGBL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RenewGBLRequest" nillable="true" type="tns:RenewGBLRequestDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RenewGBLRequestDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubjectID" type="xs:int"/>
+          <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="GBLRenewals" nillable="true">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:any minOccurs="0" processContents="lax"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RenewGBLRequestDetail" nillable="true" type="tns:RenewGBLRequestDetail"/>
+      <xs:element name="RenewGBLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="RenewGBLResult" nillable="true" type="tns:RenewGBLResponseDetail"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="RenewGBLResponseDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseString" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RenewGBLResponseDetail" nillable="true" type="tns:RenewGBLResponseDetail"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults">
+      <xs:complexType name="StandardFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StandardFault" nillable="true" type="tns:StandardFault"/>
+      <xs:complexType name="UserLoginFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UserLoginFault" nillable="true" type="tns:UserLoginFault"/>
+      <xs:complexType name="BatchNotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BatchNotFoundFault" nillable="true" type="tns:BatchNotFoundFault"/>
+      <xs:complexType name="BatchAlreadyConfirmedFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BatchAlreadyConfirmedFault" nillable="true" type="tns:BatchAlreadyConfirmedFault"/>
+      <xs:complexType name="SubBatchNotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SubBatchNotFoundFault" nillable="true" type="tns:SubBatchNotFoundFault"/>
+      <xs:complexType name="InvalidStatusFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InvalidStatusFault" nillable="true" type="tns:InvalidStatusFault"/>
+      <xs:complexType name="RecipientNotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RecipientNotFoundFault" nillable="true" type="tns:RecipientNotFoundFault"/>
+      <xs:complexType name="SubjectNotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReasonCode" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SubjectNotFoundFault" nillable="true" type="tns:SubjectNotFoundFault"/>
+      <xs:complexType name="UBINotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UBINotFoundFault" nillable="true" type="tns:UBINotFoundFault"/>
+      <xs:complexType name="AccountNumberNotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AccountNumberNotFoundFault" nillable="true" type="tns:AccountNumberNotFoundFault"/>
+      <xs:complexType name="InvalidUserTypeFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InvalidUserTypeFault" nillable="true" type="tns:InvalidUserTypeFault"/>
+      <xs:complexType name="XmlSchemaValidationFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="XmlSchemaValidationFault" nillable="true" type="tns:XmlSchemaValidationFault"/>
+      <xs:complexType name="ApplicationNotFoundFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ApplicationNotFoundFault" nillable="true" type="tns:ApplicationNotFoundFault"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="PCSSoapAuthenticationHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdminUN" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AdminPW" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PCSSoapAuthenticationHeader" nillable="true" type="PCSSoapAuthenticationHeader"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Data">
+      <xs:simpleType name="ResponseCode">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OK"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ResponseCode" nillable="true" type="tns:ResponseCode"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IPCS_Version_InputMessage"/>
+  <wsdl:message name="VersionResponse">
+    <wsdl:part name="parameters" element="tns:VersionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_Version_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:StandardFault" xmlns:q1="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_VersionChangeDescription_InputMessage"/>
+  <wsdl:message name="VersionChangeDescriptionResponse">
+    <wsdl:part name="parameters" element="tns:VersionChangeDescriptionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_VersionChangeDescription_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:StandardFault" xmlns:q2="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="BatchSummaryReportRequest">
+    <wsdl:part name="parameters" element="tns:BatchSummaryReport"/>
+  </wsdl:message>
+  <wsdl:message name="BatchSummaryReportRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="BatchSummaryReportResponse">
+    <wsdl:part name="parameters" element="tns:BatchSummaryReportResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_BatchSummaryReport_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:StandardFault" xmlns:q3="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_BatchSummaryReport_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:UserLoginFault" xmlns:q4="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_BatchSummaryReport_BatchNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:BatchNotFoundFault" xmlns:q5="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="CollectorLoginCheckRequest">
+    <wsdl:part name="parameters" element="tns:CollectorLoginCheck"/>
+  </wsdl:message>
+  <wsdl:message name="CollectorLoginCheckRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="CollectorLoginCheckResponse">
+    <wsdl:part name="parameters" element="tns:CollectorLoginCheckResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CollectorLoginCheck_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:UserLoginFault" xmlns:q6="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CollectorLoginCheck_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:StandardFault" xmlns:q7="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="CollectorRtnsToDownloadRequest">
+    <wsdl:part name="parameters" element="tns:CollectorRtnsToDownload"/>
+  </wsdl:message>
+  <wsdl:message name="CollectorRtnsToDownloadRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="CollectorRtnsToDownloadResponse">
+    <wsdl:part name="parameters" element="tns:CollectorRtnsToDownloadResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CollectorRtnsToDownload_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:StandardFault" xmlns:q8="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CollectorRtnsToDownload_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:UserLoginFault" xmlns:q9="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="ConfirmDownloadedBatchRequest">
+    <wsdl:part name="parameters" element="tns:ConfirmDownloadedBatch"/>
+  </wsdl:message>
+  <wsdl:message name="ConfirmDownloadedBatchRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ConfirmDownloadedBatchResponse">
+    <wsdl:part name="parameters" element="tns:ConfirmDownloadedBatchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ConfirmDownloadedBatch_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:StandardFault" xmlns:q10="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ConfirmDownloadedBatch_BatchAlreadyConfirmedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:BatchAlreadyConfirmedFault" xmlns:q11="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ConfirmDownloadedBatch_BatchNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:BatchNotFoundFault" xmlns:q12="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ConfirmDownloadedBatch_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q13:UserLoginFault" xmlns:q13="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="ReDownloadReturnBatchRequest">
+    <wsdl:part name="parameters" element="tns:ReDownloadReturnBatch"/>
+  </wsdl:message>
+  <wsdl:message name="ReDownloadReturnBatchRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ReDownloadReturnBatchResponse">
+    <wsdl:part name="parameters" element="tns:ReDownloadReturnBatchResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ReDownloadReturnBatch_SubBatchNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q14:SubBatchNotFoundFault" xmlns:q14="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ReDownloadReturnBatch_BatchAlreadyConfirmedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q15:BatchAlreadyConfirmedFault" xmlns:q15="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ReDownloadReturnBatch_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q16:StandardFault" xmlns:q16="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ReDownloadReturnBatch_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q17:UserLoginFault" xmlns:q17="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="RejectDownloadedReturnRequest">
+    <wsdl:part name="parameters" element="tns:RejectDownloadedReturn"/>
+  </wsdl:message>
+  <wsdl:message name="RejectDownloadedReturnRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="RejectDownloadedReturnResponse">
+    <wsdl:part name="parameters" element="tns:RejectDownloadedReturnResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RejectDownloadedReturn_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q18:StandardFault" xmlns:q18="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RejectDownloadedReturn_InvalidReturnInfoFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidReturnInfoFault"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RejectDownloadedReturn_FormNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FormNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RejectDownloadedReturn_FormReturnInfoMismatchFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FormReturnInfoMismatchFault"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RejectDownloadedReturn_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q19:UserLoginFault" xmlns:q19="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeFormStatusRequest">
+    <wsdl:part name="parameters" element="tns:ChangeFormStatus"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeFormStatusRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeFormStatusResponse">
+    <wsdl:part name="parameters" element="tns:ChangeFormStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ChangeFormStatus_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q20:UserLoginFault" xmlns:q20="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ChangeFormStatus_InvalidStatusFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q21:InvalidStatusFault" xmlns:q21="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ChangeFormStatus_FormReturnInfoMismatchFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FormReturnInfoMismatchFault"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ChangeFormStatus_InvalidReturnInfoFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidReturnInfoFault"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ChangeFormStatus_FormNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:FormNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ChangeFormStatus_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q22:StandardFault" xmlns:q22="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="CreateSecureMsgRequest">
+    <wsdl:part name="parameters" element="tns:CreateSecureMsg"/>
+  </wsdl:message>
+  <wsdl:message name="CreateSecureMsgRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="CreateSecureMsgResponse">
+    <wsdl:part name="parameters" element="tns:CreateSecureMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CreateSecureMsg_RecipientNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q23:RecipientNotFoundFault" xmlns:q23="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CreateSecureMsg_SubjectNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q24:SubjectNotFoundFault" xmlns:q24="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CreateSecureMsg_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q25:StandardFault" xmlns:q25="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_CreateSecureMsg_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q26:UserLoginFault" xmlns:q26="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="GetMessageUsersRequest">
+    <wsdl:part name="parameters" element="tns:GetMessageUsers"/>
+  </wsdl:message>
+  <wsdl:message name="GetMessageUsersRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="GetMessageUsersResponse">
+    <wsdl:part name="parameters" element="tns:GetMessageUsersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_GetMessageUsers_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q27:StandardFault" xmlns:q27="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_GetMessageUsers_UBINotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q28:UBINotFoundFault" xmlns:q28="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_GetMessageUsers_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q29:UserLoginFault" xmlns:q29="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_GetMessageUsers_AccountNumberNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q30:AccountNumberNotFoundFault" xmlns:q30="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_GetMessageUsers_InvalidUserTypeFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q31:InvalidUserTypeFault" xmlns:q31="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountNumberRequest">
+    <wsdl:part name="parameters" element="tns:UpdateAccountNumber"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountNumberRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountNumberResponse">
+    <wsdl:part name="parameters" element="tns:UpdateAccountNumberResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_UpdateAccountNumber_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q32:UserLoginFault" xmlns:q32="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_UpdateAccountNumber_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q33:StandardFault" xmlns:q33="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_UpdateAccountNumber_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q34:XmlSchemaValidationFault" xmlns:q34="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="ApproveGBLRequest">
+    <wsdl:part name="parameters" element="tns:ApproveGBL"/>
+  </wsdl:message>
+  <wsdl:message name="ApproveGBLRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ApproveGBLResponse">
+    <wsdl:part name="parameters" element="tns:ApproveGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ApproveGBL_ApplicationNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q35:ApplicationNotFoundFault" xmlns:q35="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ApproveGBL_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q36:StandardFault" xmlns:q36="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ApproveGBL_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q37:XmlSchemaValidationFault" xmlns:q37="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ApproveGBL_InvalidStatusFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q38:InvalidStatusFault" xmlns:q38="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_ApproveGBL_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q39:UserLoginFault" xmlns:q39="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="RenewGBLRequest">
+    <wsdl:part name="parameters" element="tns:RenewGBL"/>
+  </wsdl:message>
+  <wsdl:message name="RenewGBLRequest_Headers">
+    <wsdl:part name="Header" element="PCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="RenewGBLResponse">
+    <wsdl:part name="parameters" element="tns:RenewGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RenewGBL_UserLoginFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q40:UserLoginFault" xmlns:q40="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RenewGBL_XmlSchemaValidationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q41:XmlSchemaValidationFault" xmlns:q41="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:message name="IPCS_RenewGBL_StandardFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q42:StandardFault" xmlns:q42="http://schemas.datacontract.org/2004/07/SalesTaxOnline.PCS.Faults"/>
+  </wsdl:message>
+  <wsdl:portType name="IPCS">
+    <wsdl:operation name="Version">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/Version" message="tns:IPCS_Version_InputMessage"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/VersionResponse" name="VersionResponse" message="tns:VersionResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/VersionStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_Version_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VersionChangeDescription">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/VersionChangeDescription" message="tns:IPCS_VersionChangeDescription_InputMessage"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/VersionChangeDescriptionResponse" name="VersionChangeDescriptionResponse" message="tns:VersionChangeDescriptionResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/VersionChangeDescriptionStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_VersionChangeDescription_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="BatchSummaryReport">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/BatchSummaryReport" name="BatchSummaryReportRequest" message="tns:BatchSummaryReportRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/BatchSummaryReportResponse" name="BatchSummaryReportResponse" message="tns:BatchSummaryReportResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/BatchSummaryReportStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_BatchSummaryReport_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/BatchSummaryReportUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_BatchSummaryReport_UserLoginFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/BatchSummaryReportBatchNotFoundFaultFault" name="BatchNotFoundFaultFault" message="tns:IPCS_BatchSummaryReport_BatchNotFoundFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CollectorLoginCheck">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/CollectorLoginCheck" name="CollectorLoginCheckRequest" message="tns:CollectorLoginCheckRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/CollectorLoginCheckResponse" name="CollectorLoginCheckResponse" message="tns:CollectorLoginCheckResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CollectorLoginCheckUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_CollectorLoginCheck_UserLoginFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CollectorLoginCheckStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_CollectorLoginCheck_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CollectorRtnsToDownload">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/CollectorRtnsToDownload" name="CollectorRtnsToDownloadRequest" message="tns:CollectorRtnsToDownloadRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/CollectorRtnsToDownloadResponse" name="CollectorRtnsToDownloadResponse" message="tns:CollectorRtnsToDownloadResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CollectorRtnsToDownloadStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_CollectorRtnsToDownload_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CollectorRtnsToDownloadUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_CollectorRtnsToDownload_UserLoginFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmDownloadedBatch">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatch" name="ConfirmDownloadedBatchRequest" message="tns:ConfirmDownloadedBatchRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatchResponse" name="ConfirmDownloadedBatchResponse" message="tns:ConfirmDownloadedBatchResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatchStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_ConfirmDownloadedBatch_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatchBatchAlreadyConfirmedFaultFault" name="BatchAlreadyConfirmedFaultFault" message="tns:IPCS_ConfirmDownloadedBatch_BatchAlreadyConfirmedFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatchBatchNotFoundFaultFault" name="BatchNotFoundFaultFault" message="tns:IPCS_ConfirmDownloadedBatch_BatchNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatchUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_ConfirmDownloadedBatch_UserLoginFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ReDownloadReturnBatch">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/ReDownloadReturnBatch" name="ReDownloadReturnBatchRequest" message="tns:ReDownloadReturnBatchRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/ReDownloadReturnBatchResponse" name="ReDownloadReturnBatchResponse" message="tns:ReDownloadReturnBatchResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ReDownloadReturnBatchSubBatchNotFoundFaultFault" name="SubBatchNotFoundFaultFault" message="tns:IPCS_ReDownloadReturnBatch_SubBatchNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ReDownloadReturnBatchBatchAlreadyConfirmedFaultFault" name="BatchAlreadyConfirmedFaultFault" message="tns:IPCS_ReDownloadReturnBatch_BatchAlreadyConfirmedFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ReDownloadReturnBatchStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_ReDownloadReturnBatch_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ReDownloadReturnBatchUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_ReDownloadReturnBatch_UserLoginFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="RejectDownloadedReturn">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/RejectDownloadedReturn" name="RejectDownloadedReturnRequest" message="tns:RejectDownloadedReturnRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/RejectDownloadedReturnResponse" name="RejectDownloadedReturnResponse" message="tns:RejectDownloadedReturnResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RejectDownloadedReturnStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_RejectDownloadedReturn_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RejectDownloadedReturnInvalidReturnInfoFaultFault" name="InvalidReturnInfoFaultFault" message="tns:IPCS_RejectDownloadedReturn_InvalidReturnInfoFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RejectDownloadedReturnFormNotFoundFaultFault" name="FormNotFoundFaultFault" message="tns:IPCS_RejectDownloadedReturn_FormNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RejectDownloadedReturnFormReturnInfoMismatchFaultFault" name="FormReturnInfoMismatchFaultFault" message="tns:IPCS_RejectDownloadedReturn_FormReturnInfoMismatchFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RejectDownloadedReturnUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_RejectDownloadedReturn_UserLoginFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFormStatus">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatus" name="ChangeFormStatusRequest" message="tns:ChangeFormStatusRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatusResponse" name="ChangeFormStatusResponse" message="tns:ChangeFormStatusResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatusUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_ChangeFormStatus_UserLoginFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatusInvalidStatusFaultFault" name="InvalidStatusFaultFault" message="tns:IPCS_ChangeFormStatus_InvalidStatusFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatusFormReturnInfoMismatchFaultFault" name="FormReturnInfoMismatchFaultFault" message="tns:IPCS_ChangeFormStatus_FormReturnInfoMismatchFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatusInvalidReturnInfoFaultFault" name="InvalidReturnInfoFaultFault" message="tns:IPCS_ChangeFormStatus_InvalidReturnInfoFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatusFormNotFoundFaultFault" name="FormNotFoundFaultFault" message="tns:IPCS_ChangeFormStatus_FormNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ChangeFormStatusStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_ChangeFormStatus_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSecureMsg">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/CreateSecureMsg" name="CreateSecureMsgRequest" message="tns:CreateSecureMsgRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/CreateSecureMsgResponse" name="CreateSecureMsgResponse" message="tns:CreateSecureMsgResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CreateSecureMsgRecipientNotFoundFaultFault" name="RecipientNotFoundFaultFault" message="tns:IPCS_CreateSecureMsg_RecipientNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CreateSecureMsgSubjectNotFoundFaultFault" name="SubjectNotFoundFaultFault" message="tns:IPCS_CreateSecureMsg_SubjectNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CreateSecureMsgStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_CreateSecureMsg_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/CreateSecureMsgUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_CreateSecureMsg_UserLoginFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageUsers">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/GetMessageUsers" name="GetMessageUsersRequest" message="tns:GetMessageUsersRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/GetMessageUsersResponse" name="GetMessageUsersResponse" message="tns:GetMessageUsersResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/GetMessageUsersStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_GetMessageUsers_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/GetMessageUsersUBINotFoundFaultFault" name="UBINotFoundFaultFault" message="tns:IPCS_GetMessageUsers_UBINotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/GetMessageUsersUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_GetMessageUsers_UserLoginFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/GetMessageUsersAccountNumberNotFoundFaultFault" name="AccountNumberNotFoundFaultFault" message="tns:IPCS_GetMessageUsers_AccountNumberNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/GetMessageUsersInvalidUserTypeFaultFault" name="InvalidUserTypeFaultFault" message="tns:IPCS_GetMessageUsers_InvalidUserTypeFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountNumber">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/UpdateAccountNumber" name="UpdateAccountNumberRequest" message="tns:UpdateAccountNumberRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/UpdateAccountNumberResponse" name="UpdateAccountNumberResponse" message="tns:UpdateAccountNumberResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/UpdateAccountNumberUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_UpdateAccountNumber_UserLoginFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/UpdateAccountNumberStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_UpdateAccountNumber_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/UpdateAccountNumberXmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:IPCS_UpdateAccountNumber_XmlSchemaValidationFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveGBL">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/ApproveGBL" name="ApproveGBLRequest" message="tns:ApproveGBLRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/ApproveGBLResponse" name="ApproveGBLResponse" message="tns:ApproveGBLResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ApproveGBLApplicationNotFoundFaultFault" name="ApplicationNotFoundFaultFault" message="tns:IPCS_ApproveGBL_ApplicationNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ApproveGBLStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_ApproveGBL_StandardFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ApproveGBLXmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:IPCS_ApproveGBL_XmlSchemaValidationFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ApproveGBLInvalidStatusFaultFault" name="InvalidStatusFaultFault" message="tns:IPCS_ApproveGBL_InvalidStatusFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/ApproveGBLUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_ApproveGBL_UserLoginFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="RenewGBL">
+      <wsdl:input wsaw:Action="http://FileLocalPCS/IPCS/RenewGBL" name="RenewGBLRequest" message="tns:RenewGBLRequest"/>
+      <wsdl:output wsaw:Action="http://FileLocalPCS/IPCS/RenewGBLResponse" name="RenewGBLResponse" message="tns:RenewGBLResponse"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RenewGBLUserLoginFaultFault" name="UserLoginFaultFault" message="tns:IPCS_RenewGBL_UserLoginFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RenewGBLXmlSchemaValidationFaultFault" name="XmlSchemaValidationFaultFault" message="tns:IPCS_RenewGBL_XmlSchemaValidationFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://FileLocalPCS/IPCS/RenewGBLStandardFaultFault" name="StandardFaultFault" message="tns:IPCS_RenewGBL_StandardFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsHttpEndpoint" type="tns:IPCS">
+    <wsp:PolicyReference URI="#wsHttpEndpoint_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/Version" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="VersionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VersionChangeDescription">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/VersionChangeDescription" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="VersionChangeDescriptionResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BatchSummaryReport">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/BatchSummaryReport" style="document"/>
+      <wsdl:input name="BatchSummaryReportRequest">
+        <soap12:header message="tns:BatchSummaryReportRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="BatchSummaryReportResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="BatchNotFoundFaultFault">
+        <soap12:fault use="literal" name="BatchNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CollectorLoginCheck">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/CollectorLoginCheck" style="document"/>
+      <wsdl:input name="CollectorLoginCheckRequest">
+        <soap12:header message="tns:CollectorLoginCheckRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CollectorLoginCheckResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CollectorRtnsToDownload">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/CollectorRtnsToDownload" style="document"/>
+      <wsdl:input name="CollectorRtnsToDownloadRequest">
+        <soap12:header message="tns:CollectorRtnsToDownloadRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CollectorRtnsToDownloadResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmDownloadedBatch">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/ConfirmDownloadedBatch" style="document"/>
+      <wsdl:input name="ConfirmDownloadedBatchRequest">
+        <soap12:header message="tns:ConfirmDownloadedBatchRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfirmDownloadedBatchResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="BatchAlreadyConfirmedFaultFault">
+        <soap12:fault use="literal" name="BatchAlreadyConfirmedFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="BatchNotFoundFaultFault">
+        <soap12:fault use="literal" name="BatchNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReDownloadReturnBatch">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/ReDownloadReturnBatch" style="document"/>
+      <wsdl:input name="ReDownloadReturnBatchRequest">
+        <soap12:header message="tns:ReDownloadReturnBatchRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ReDownloadReturnBatchResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SubBatchNotFoundFaultFault">
+        <soap12:fault use="literal" name="SubBatchNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="BatchAlreadyConfirmedFaultFault">
+        <soap12:fault use="literal" name="BatchAlreadyConfirmedFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RejectDownloadedReturn">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/RejectDownloadedReturn" style="document"/>
+      <wsdl:input name="RejectDownloadedReturnRequest">
+        <soap12:header message="tns:RejectDownloadedReturnRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RejectDownloadedReturnResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidReturnInfoFaultFault">
+        <soap12:fault use="literal" name="InvalidReturnInfoFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="FormNotFoundFaultFault">
+        <soap12:fault use="literal" name="FormNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="FormReturnInfoMismatchFaultFault">
+        <soap12:fault use="literal" name="FormReturnInfoMismatchFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFormStatus">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/ChangeFormStatus" style="document"/>
+      <wsdl:input name="ChangeFormStatusRequest">
+        <soap12:header message="tns:ChangeFormStatusRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ChangeFormStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStatusFaultFault">
+        <soap12:fault use="literal" name="InvalidStatusFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="FormReturnInfoMismatchFaultFault">
+        <soap12:fault use="literal" name="FormReturnInfoMismatchFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidReturnInfoFaultFault">
+        <soap12:fault use="literal" name="InvalidReturnInfoFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="FormNotFoundFaultFault">
+        <soap12:fault use="literal" name="FormNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSecureMsg">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/CreateSecureMsg" style="document"/>
+      <wsdl:input name="CreateSecureMsgRequest">
+        <soap12:header message="tns:CreateSecureMsgRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateSecureMsgResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RecipientNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecipientNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="SubjectNotFoundFaultFault">
+        <soap12:fault use="literal" name="SubjectNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageUsers">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/GetMessageUsers" style="document"/>
+      <wsdl:input name="GetMessageUsersRequest">
+        <soap12:header message="tns:GetMessageUsersRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetMessageUsersResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UBINotFoundFaultFault">
+        <soap12:fault use="literal" name="UBINotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="AccountNumberNotFoundFaultFault">
+        <soap12:fault use="literal" name="AccountNumberNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidUserTypeFaultFault">
+        <soap12:fault use="literal" name="InvalidUserTypeFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountNumber">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/UpdateAccountNumber" style="document"/>
+      <wsdl:input name="UpdateAccountNumberRequest">
+        <soap12:header message="tns:UpdateAccountNumberRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateAccountNumberResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault use="literal" name="XmlSchemaValidationFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveGBL">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/ApproveGBL" style="document"/>
+      <wsdl:input name="ApproveGBLRequest">
+        <soap12:header message="tns:ApproveGBLRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ApproveGBLResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationNotFoundFaultFault">
+        <soap12:fault use="literal" name="ApplicationNotFoundFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault use="literal" name="XmlSchemaValidationFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStatusFaultFault">
+        <soap12:fault use="literal" name="InvalidStatusFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RenewGBL">
+      <soap12:operation soapAction="http://FileLocalPCS/IPCS/RenewGBL" style="document"/>
+      <wsdl:input name="RenewGBLRequest">
+        <soap12:header message="tns:RenewGBLRequest_Headers" part="Header" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RenewGBLResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UserLoginFaultFault">
+        <soap12:fault use="literal" name="UserLoginFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="XmlSchemaValidationFaultFault">
+        <soap12:fault use="literal" name="XmlSchemaValidationFaultFault" namespace=""/>
+      </wsdl:fault>
+      <wsdl:fault name="StandardFaultFault">
+        <soap12:fault use="literal" name="StandardFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PCS">
+    <wsdl:port name="wsHttpEndpoint" binding="tns:wsHttpEndpoint">
+      <soap12:address location="https://filelocalpcs.salestaxonline.com/PCS.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://filelocalpcs.salestaxonline.com/PCS.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint></con:endpoints><con:operation id="ff162c7b-66be-49f6-bfc5-e17d3bab7b79" isOneWay="false" action="http://FileLocalPCS/IPCS/ApproveGBL" name="ApproveGBL" bindingOperationName="ApproveGBL" type="Request-Response" outputName="ApproveGBLResponse" inputName="ApproveGBLRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="418dac0f-193d-4a93-8891-3edc16211adf" name="PCS18-Case1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>BellevuePCS</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>Pass132</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ApproveGBL>\r
+         <fil:ApproveGBLRequest>\r
+            <fil:RequestXml>\r
+            	<Approvals Uploaded="5/12/2015" Count="1">
+            		<Approval>
+            			<AccountNumber>147810</AccountNumber>
+            			<StatusID>12</StatusID>
+            			<ApplicationID>18</ApplicationID>
+            		</Approval>
+            	</Approvals>
+            </fil:RequestXml>\r
+         </fil:ApproveGBLRequest>\r
+      </fil:ApproveGBL>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ApproveGBL" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="33f00bb7-9358-47c7-8c0b-fcf53b9c0a2a" name="PCS18-Case2" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>BellevuePCS</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>Pass132</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ApproveGBL>\r
+         <fil:ApproveGBLRequest>\r
+            <fil:RequestXml>\r
+            	<Approvals Uploaded="5/12/2015" Count="1">
+            		<Approval>
+            			<AccountNumber>147812</AccountNumber>
+            			<StatusID>12</StatusID>
+            			<ApplicationID>58</ApplicationID>
+            		</Approval>
+            	</Approvals>
+            </fil:RequestXml>\r
+         </fil:ApproveGBLRequest>\r
+      </fil:ApproveGBL>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ApproveGBL" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6269929f-1e74-4123-99f6-e35792d44157" isOneWay="false" action="http://FileLocalPCS/IPCS/BatchSummaryReport" name="BatchSummaryReport" bindingOperationName="BatchSummaryReport" type="Request-Response" outputName="BatchSummaryReportResponse" inputName="BatchSummaryReportRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9ed0a3b5-4f4f-41d5-bcc1-5e22be6fdeb6" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:BatchSummaryReport>\r
+         <!--Optional:-->\r
+         <fil:BatchSummaryReportRequest>\r
+            <!--Optional:-->\r
+            <fil:BatchID>?</fil:BatchID>\r
+         </fil:BatchSummaryReportRequest>\r
+      </fil:BatchSummaryReport>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/BatchSummaryReport"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="88a829a3-05e4-4bcb-8b72-3e64a3d5b7fa" isOneWay="false" action="http://FileLocalPCS/IPCS/ChangeFormStatus" name="ChangeFormStatus" bindingOperationName="ChangeFormStatus" type="Request-Response" outputName="ChangeFormStatusResponse" inputName="ChangeFormStatusRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bb298894-1729-4d31-b03e-fc1fd9db5d5b" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>BellevuePCS</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>Pass132</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ChangeFormStatus>\r
+         <!--Optional:-->\r
+         <fil:ChangeFormStatusRequest>\r
+            <!--Optional:-->\r
+            <fil:ReturnInfoID>0</fil:ReturnInfoID>\r
+            <!--Optional:-->\r
+            <fil:FormID>1234</fil:FormID>\r
+            <!--Optional:-->\r
+            <fil:StatusID>12</fil:StatusID>\r
+         </fil:ChangeFormStatusRequest>\r
+      </fil:ChangeFormStatus>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ChangeFormStatus" addDefaultAction="false" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="3c6ced48-b7f5-4f61-a99f-508548699ac6" name="Request2" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+      <soap:Header>
+      <PCSSoapAuthenticationHeader>
+         <!--Optional:-->
+         <AdminUN>BellevueInvalid</AdminUN>
+         <!--Optional:-->
+         <AdminPW>Pass132</AdminPW>
+      </PCSSoapAuthenticationHeader>
+   </soap:Header>
+   <soap:Body>
+      <fil:ChangeFormStatus>
+         <!--Optional:-->
+         <fil:ChangeFormStatusRequest>
+            <!--Optional:-->
+           <fil:ReturnInfoID>0</fil:ReturnInfoID>
+            <!--Optional:-->
+            <fil:FormID>1234</fil:FormID>
+            <!--Optional:status 12 = approved-->
+            <fil:StatusID>12</fil:StatusID>
+         </fil:ChangeFormStatusRequest>
+      </fil:ChangeFormStatus>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ChangeFormStatus" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="3875c156-24fb-4401-93e7-b3ea02227a4f" name="Request3" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>
+      <PCSSoapAuthenticationHeader>
+         <!--Optional:-->
+         <AdminUN>BellevuePCS</AdminUN>
+         <!--Optional:-->
+         <AdminPW>PassInvalid</AdminPW>
+      </PCSSoapAuthenticationHeader>
+   </soap:Header>
+   <soap:Body>
+      <fil:ChangeFormStatus>
+         <!--Optional:-->
+         <fil:ChangeFormStatusRequest>
+            <!--Optional:-->
+            <fil:ReturnInfoID>0</fil:ReturnInfoID>
+            <!--Optional:-->
+            <fil:FormID>1234</fil:FormID>
+            <!--Optional:status 12 = approved-->
+            <fil:StatusID>12</fil:StatusID>
+         </fil:ChangeFormStatusRequest>
+      </fil:ChangeFormStatus>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ChangeFormStatus" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="cfce3deb-8852-4489-837b-23e58c6e0b18" name="Request4" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+      <soap:Header>
+      <PCSSoapAuthenticationHeader>
+         <!--Optional:-->
+         <AdminUN>BellevueInvalid</AdminUN>
+         <!--Optional:-->
+         <AdminPW>PassInvalid</AdminPW>
+      </PCSSoapAuthenticationHeader>
+   </soap:Header>
+   <soap:Body>
+      <fil:ChangeFormStatus>
+         <!--Optional:-->
+         <fil:ChangeFormStatusRequest>
+            <!--Optional:-->
+            <fil:ReturnInfoID>0</fil:ReturnInfoID>
+            <!--Optional:-->
+            <fil:FormID>1234</fil:FormID>
+            <!--Optional:status 12 = approved-->
+            <fil:StatusID>12</fil:StatusID>
+         </fil:ChangeFormStatusRequest>
+      </fil:ChangeFormStatus>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ChangeFormStatus" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="81fdbb33-699d-4c16-95d6-2efc14580f5b" name="Request5" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>
+      <PCSSoapAuthenticationHeader>
+         <!--Optional:-->
+         <AdminUN>BellevuePCS</AdminUN>
+         <!--Optional:-->
+         <AdminPW>Pass132</AdminPW>
+      </PCSSoapAuthenticationHeader>
+   </soap:Header>
+   <soap:Body>
+      <fil:ChangeFormStatus>
+         <!--Optional:-->
+         <fil:ChangeFormStatusRequest>
+            <!--Optional:-->
+            <fil:ReturnInfoID>0</fil:ReturnInfoID>
+            <!--Optional:-->
+            <fil:FormID>X</fil:FormID>
+            <!--Optional:status 12 = approved-->
+            <fil:StatusID>12</fil:StatusID>
+         </fil:ChangeFormStatusRequest>
+      </fil:ChangeFormStatus>
+   </soap:Body>
+
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ChangeFormStatus" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="717cf654-8e2b-45e6-8ce1-471f1a0855d1" name="PCS12 - Case1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>BellevuePCS</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>Pass132</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ChangeFormStatus>\r
+         <!--Optional:-->\r
+         <fil:ChangeFormStatusRequest>\r
+            <fil:ReturnInfoID>1100</fil:ReturnInfoID>\r
+            <fil:FormID>26</fil:FormID>\r
+            <fil:StatusID>15</fil:StatusID>\r
+         </fil:ChangeFormStatusRequest>\r
+      </fil:ChangeFormStatus>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ChangeFormStatus" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="abf91877-15ef-44f7-b611-502d14a2574a" isOneWay="false" action="http://FileLocalPCS/IPCS/CollectorLoginCheck" name="CollectorLoginCheck" bindingOperationName="CollectorLoginCheck" type="Request-Response" outputName="CollectorLoginCheckResponse" inputName="CollectorLoginCheckRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b3bf8019-b46c-447f-9158-fc1930a3ce6c" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:CollectorLoginCheck/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/CollectorLoginCheck"/></con:call></con:operation><con:operation id="c9a600b1-5fbc-4262-9f95-cf7efb568258" isOneWay="false" action="http://FileLocalPCS/IPCS/CollectorRtnsToDownload" name="CollectorRtnsToDownload" bindingOperationName="CollectorRtnsToDownload" type="Request-Response" outputName="CollectorRtnsToDownloadResponse" inputName="CollectorRtnsToDownloadRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a188cdbb-52d9-48f6-9104-55f269fc4620" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:CollectorRtnsToDownload/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/CollectorRtnsToDownload"/></con:call></con:operation><con:operation id="faf91471-eeaf-48ab-a8e6-341c96b977e6" isOneWay="false" action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatch" name="ConfirmDownloadedBatch" bindingOperationName="ConfirmDownloadedBatch" type="Request-Response" outputName="ConfirmDownloadedBatchResponse" inputName="ConfirmDownloadedBatchRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ef7f22de-c88b-452b-9bed-dd61c63323cb" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ConfirmDownloadedBatch>\r
+         <!--Optional:-->\r
+         <fil:ConfirmDownloadedBatchRequest>\r
+            <!--Optional:-->\r
+            <fil:BatchID>?</fil:BatchID>\r
+         </fil:ConfirmDownloadedBatchRequest>\r
+      </fil:ConfirmDownloadedBatch>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatch"/></con:call></con:operation><con:operation id="150c88c0-bc21-4207-8ffd-7e073b4c322f" isOneWay="false" action="http://FileLocalPCS/IPCS/CreateSecureMsg" name="CreateSecureMsg" bindingOperationName="CreateSecureMsg" type="Request-Response" outputName="CreateSecureMsgResponse" inputName="CreateSecureMsgRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="be87e790-d390-44aa-9602-7f2b456e054f" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:CreateSecureMsg>\r
+         <!--Optional:-->\r
+         <fil:CreateSecureMsg>\r
+            <!--Optional:-->\r
+            <fil:RecipientID>?</fil:RecipientID>\r
+            <!--Optional:-->\r
+            <fil:SubjectID>?</fil:SubjectID>\r
+            <!--Optional:-->\r
+            <fil:Body>?</fil:Body>\r
+            <!--Optional:-->\r
+            <fil:NoAttachments>?</fil:NoAttachments>\r
+         </fil:CreateSecureMsg>\r
+      </fil:CreateSecureMsg>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/CreateSecureMsg"/></con:call></con:operation><con:operation id="354f3b5f-d95f-42cf-81c5-fbbec442dcd5" isOneWay="false" action="http://FileLocalPCS/IPCS/GetMessageUsers" name="GetMessageUsers" bindingOperationName="GetMessageUsers" type="Request-Response" outputName="GetMessageUsersResponse" inputName="GetMessageUsersRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d5ee0ecb-0308-478b-ae95-42d772594512" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:GetMessageUsers>\r
+         <!--Optional:-->\r
+         <fil:GetMessageUsersRequest>\r
+            <!--Optional:-->\r
+            <fil:UserTypeID>?</fil:UserTypeID>\r
+            <!--Optional:-->\r
+            <fil:TaxAccountID>?</fil:TaxAccountID>\r
+            <!--Optional:-->\r
+            <fil:UBI>?</fil:UBI>\r
+         </fil:GetMessageUsersRequest>\r
+      </fil:GetMessageUsers>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/GetMessageUsers"/></con:call></con:operation><con:operation id="f9b5c3b3-468b-4339-a999-0d6b8f21a0eb" isOneWay="false" action="http://FileLocalPCS/IPCS/ReDownloadReturnBatch" name="ReDownloadReturnBatch" bindingOperationName="ReDownloadReturnBatch" type="Request-Response" outputName="ReDownloadReturnBatchResponse" inputName="ReDownloadReturnBatchRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f51642a9-449c-47f1-9341-96e42a4609f0" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ReDownloadReturnBatch>\r
+         <!--Optional:-->\r
+         <fil:ReDownloadReturnBatchRequest>\r
+            <!--Optional:-->\r
+            <fil:SubBatchID>?</fil:SubBatchID>\r
+         </fil:ReDownloadReturnBatchRequest>\r
+      </fil:ReDownloadReturnBatch>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/ReDownloadReturnBatch"/></con:call></con:operation><con:operation id="42835b2d-f473-4bd6-8d9b-902e749b6426" isOneWay="false" action="http://FileLocalPCS/IPCS/RejectDownloadedReturn" name="RejectDownloadedReturn" bindingOperationName="RejectDownloadedReturn" type="Request-Response" outputName="RejectDownloadedReturnResponse" inputName="RejectDownloadedReturnRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c9697463-a4aa-4331-9bc4-f5825cf0299f" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:RejectDownloadedReturn>\r
+         <!--Optional:-->\r
+         <fil:RejectDownloadedReturnRequest>\r
+            <!--Optional:-->\r
+            <fil:ReturnInfoID>?</fil:ReturnInfoID>\r
+            <!--Optional:-->\r
+            <fil:FormID>?</fil:FormID>\r
+            <!--Optional:-->\r
+            <fil:RejectReason>?</fil:RejectReason>\r
+         </fil:RejectDownloadedReturnRequest>\r
+      </fil:RejectDownloadedReturn>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/RejectDownloadedReturn"/></con:call></con:operation><con:operation id="0cc310e6-0950-4078-a228-b459d70cbcff" isOneWay="false" action="http://FileLocalPCS/IPCS/RenewGBL" name="RenewGBL" bindingOperationName="RenewGBL" type="Request-Response" outputName="RenewGBLResponse" inputName="RenewGBLRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e469a362-e085-4f46-81cd-49f94796e3d4" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:RenewGBL>\r
+         <!--Optional:-->\r
+         <fil:RenewGBLRequest>\r
+            <!--Optional:-->\r
+            <fil:SubjectID>?</fil:SubjectID>\r
+            <!--Optional:-->\r
+            <fil:Body>?</fil:Body>\r
+            <!--Optional:-->\r
+            <fil:GBLRenewals>\r
+               <!--You may enter ANY elements at this point-->\r
+            </fil:GBLRenewals>\r
+         </fil:RenewGBLRequest>\r
+      </fil:RenewGBL>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/RenewGBL"/></con:call></con:operation><con:operation id="532df1c2-fe51-485a-940e-b218bd908765" isOneWay="false" action="http://FileLocalPCS/IPCS/UpdateAccountNumber" name="UpdateAccountNumber" bindingOperationName="UpdateAccountNumber" type="Request-Response" outputName="UpdateAccountNumberResponse" inputName="UpdateAccountNumberRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95fd30a0-531f-4cf3-8f35-1c13e417f143" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:UpdateAccountNumber>\r
+         <!--Optional:-->\r
+         <fil:UpdateAccountNumberRequest>\r
+            <!--Optional:-->\r
+            <fil:RequestXml>\r
+               <!--You may enter ANY elements at this point-->\r
+            </fil:RequestXml>\r
+         </fil:UpdateAccountNumberRequest>\r
+      </fil:UpdateAccountNumber>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/UpdateAccountNumber"/></con:call></con:operation><con:operation id="0ca38b4a-a1c0-42b6-a8a2-b7dfba75e1a0" isOneWay="false" action="http://FileLocalPCS/IPCS/Version" name="Version" bindingOperationName="Version" type="Request-Response" outputName="VersionResponse" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="22edc937-c2b2-4f67-b9d2-3fdc636a903f" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">\r
+   &lt;soap:Header/>\r
+   &lt;soap:Body/>\r
+&lt;/soap:Envelope></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/Version"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="485cc292-da88-4ce3-91d1-1013e0694db4" isOneWay="false" action="http://FileLocalPCS/IPCS/VersionChangeDescription" name="VersionChangeDescription" bindingOperationName="VersionChangeDescription" type="Request-Response" outputName="VersionChangeDescriptionResponse" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d42af4f7-0fb2-4a9e-8cfc-a61af2c83fcf" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">\r
+   &lt;soap:Header/>\r
+   &lt;soap:Body/>\r
+&lt;/soap:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FileLocalPCS/IPCS/VersionChangeDescription"/></con:call></con:operation></con:interface><con:testSuite id="120acf9d-15f5-4fa1-951b-3dd50ce3f646" name="wsHttpEndpoint TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3a93cacc-8f7b-4e76-bb1f-24e9e67ecca4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ApproveGBL TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="19d5e8ed-965c-403c-bfa9-9531da725a65" name="ApproveGBL"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>ApproveGBL</con:operation><con:request name="ApproveGBL" id="c1b5d4df-6536-4c00-8df7-07d004da6aea"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ApproveGBL>\r
+         <!--Optional:-->\r
+         <fil:ApproveGBLRequest>\r
+            <!--Optional:-->\r
+            <fil:RequestXml>\r
+               <!--You may enter ANY elements at this point-->\r
+            </fil:RequestXml>\r
+         </fil:ApproveGBLRequest>\r
+      </fil:ApproveGBL>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/ApproveGBL"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="87f6e70a-8dba-4365-b749-07c0231d69d1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="BatchSummaryReport TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="fc0fb2bd-5e8f-4a3e-aec4-2e598974be7d" name="BatchSummaryReport"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>BatchSummaryReport</con:operation><con:request name="BatchSummaryReport" id="56bd29a3-5108-4bee-aab0-37e5294d2ad2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:BatchSummaryReport>\r
+         <!--Optional:-->\r
+         <fil:BatchSummaryReportRequest>\r
+            <!--Optional:-->\r
+            <fil:BatchID>?</fil:BatchID>\r
+         </fil:BatchSummaryReportRequest>\r
+      </fil:BatchSummaryReport>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/BatchSummaryReport"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5a625843-55eb-4607-afca-919a579a0b5b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ChangeFormStatus TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="d741427f-c4b3-47c3-b70d-b85de6d34326" name="ChangeFormStatus"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>ChangeFormStatus</con:operation><con:request name="ChangeFormStatus" id="33773638-42e9-4718-aebd-32bdd102e123"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ChangeFormStatus>\r
+         <!--Optional:-->\r
+         <fil:ChangeFormStatusRequest>\r
+            <!--Optional:-->\r
+            <fil:ReturnInfoID>?</fil:ReturnInfoID>\r
+            <!--Optional:-->\r
+            <fil:FormID>?</fil:FormID>\r
+            <!--Optional:-->\r
+            <fil:StatusID>?</fil:StatusID>\r
+         </fil:ChangeFormStatusRequest>\r
+      </fil:ChangeFormStatus>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://FileLocalPCS/IPCS/ChangeFormStatus" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ee438545-9606-4269-9064-311051da9d91" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CollectorLoginCheck TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="88125728-c60f-4cf1-8414-9c57477fbf54" name="CollectorLoginCheck"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>CollectorLoginCheck</con:operation><con:request name="CollectorLoginCheck" id="e848e49f-1992-4682-a0b8-8d6f1b3b71ed"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:CollectorLoginCheck/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/CollectorLoginCheck"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="534d2b4e-9e47-48d8-b966-2626d870a3a1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CollectorRtnsToDownload TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="5b2aac12-6aa8-41eb-a0fb-c45b5ad8ffc4" name="CollectorRtnsToDownload"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>CollectorRtnsToDownload</con:operation><con:request name="CollectorRtnsToDownload" id="7c26ed15-bad7-4944-87a3-d35214d95a32"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:CollectorRtnsToDownload/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/CollectorRtnsToDownload"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1d184ce1-2215-4c9a-8974-460771d33ba9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConfirmDownloadedBatch TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="fc60dd8b-5225-4dc4-87bc-66cfcba2be6c" name="ConfirmDownloadedBatch"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>ConfirmDownloadedBatch</con:operation><con:request name="ConfirmDownloadedBatch" id="e2cab2ca-cf50-485d-97f8-3ece102a21f5"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ConfirmDownloadedBatch>\r
+         <!--Optional:-->\r
+         <fil:ConfirmDownloadedBatchRequest>\r
+            <!--Optional:-->\r
+            <fil:BatchID>?</fil:BatchID>\r
+         </fil:ConfirmDownloadedBatchRequest>\r
+      </fil:ConfirmDownloadedBatch>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/ConfirmDownloadedBatch"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1f9a5f16-5c04-4173-a26e-87b882a0a51b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CreateSecureMsg TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="a847c1d8-6aa6-47f8-9fbd-596ed2691f37" name="CreateSecureMsg"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>CreateSecureMsg</con:operation><con:request name="CreateSecureMsg" id="2b3a836a-4acb-44a2-aa04-984a1b4f03b3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:CreateSecureMsg>\r
+         <!--Optional:-->\r
+         <fil:CreateSecureMsg>\r
+            <!--Optional:-->\r
+            <fil:RecipientID>?</fil:RecipientID>\r
+            <!--Optional:-->\r
+            <fil:SubjectID>?</fil:SubjectID>\r
+            <!--Optional:-->\r
+            <fil:Body>?</fil:Body>\r
+            <!--Optional:-->\r
+            <fil:NoAttachments>?</fil:NoAttachments>\r
+         </fil:CreateSecureMsg>\r
+      </fil:CreateSecureMsg>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/CreateSecureMsg"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3c60143f-8cee-41dc-b966-0fc96ce2e3b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetMessageUsers TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="39b162d8-ed53-4870-b373-cc3a193fc667" name="GetMessageUsers"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>GetMessageUsers</con:operation><con:request name="GetMessageUsers" id="a7966a32-775a-4e6e-8257-2ac003a88b5c"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:GetMessageUsers>\r
+         <!--Optional:-->\r
+         <fil:GetMessageUsersRequest>\r
+            <!--Optional:-->\r
+            <fil:UserTypeID>?</fil:UserTypeID>\r
+            <!--Optional:-->\r
+            <fil:TaxAccountID>?</fil:TaxAccountID>\r
+            <!--Optional:-->\r
+            <fil:UBI>?</fil:UBI>\r
+         </fil:GetMessageUsersRequest>\r
+      </fil:GetMessageUsers>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/GetMessageUsers"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3e69e64b-7a00-41c7-a347-d0811df87c3c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ReDownloadReturnBatch TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="6e57fe1d-2157-407d-ac16-2dff27f3ef6e" name="ReDownloadReturnBatch"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>ReDownloadReturnBatch</con:operation><con:request name="ReDownloadReturnBatch" id="1b10f986-0ab3-40d8-972f-4cc4303c4c5c"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:ReDownloadReturnBatch>\r
+         <!--Optional:-->\r
+         <fil:ReDownloadReturnBatchRequest>\r
+            <!--Optional:-->\r
+            <fil:SubBatchID>?</fil:SubBatchID>\r
+         </fil:ReDownloadReturnBatchRequest>\r
+      </fil:ReDownloadReturnBatch>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/ReDownloadReturnBatch"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="2655f80d-fc86-4a2a-91ec-4ec4748928e3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RejectDownloadedReturn TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="bb7048e2-9f2f-42f6-ac95-980ad0f9d79b" name="RejectDownloadedReturn"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>RejectDownloadedReturn</con:operation><con:request name="RejectDownloadedReturn" id="459d7d90-0067-4cca-b59a-e2edc70f3248"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:RejectDownloadedReturn>\r
+         <!--Optional:-->\r
+         <fil:RejectDownloadedReturnRequest>\r
+            <!--Optional:-->\r
+            <fil:ReturnInfoID>?</fil:ReturnInfoID>\r
+            <!--Optional:-->\r
+            <fil:FormID>?</fil:FormID>\r
+            <!--Optional:-->\r
+            <fil:RejectReason>?</fil:RejectReason>\r
+         </fil:RejectDownloadedReturnRequest>\r
+      </fil:RejectDownloadedReturn>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/RejectDownloadedReturn"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a167b10a-6b3e-4ca1-9d12-12fce98ccd06" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RenewGBL TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="7747020a-579e-465f-868c-d627bc0ff18d" name="RenewGBL"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>RenewGBL</con:operation><con:request name="RenewGBL" id="fe432b50-0992-42a8-bc50-48f318f23533"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:RenewGBL>\r
+         <!--Optional:-->\r
+         <fil:RenewGBLRequest>\r
+            <!--Optional:-->\r
+            <fil:SubjectID>?</fil:SubjectID>\r
+            <!--Optional:-->\r
+            <fil:Body>?</fil:Body>\r
+            <!--Optional:-->\r
+            <fil:GBLRenewals>\r
+               <!--You may enter ANY elements at this point-->\r
+            </fil:GBLRenewals>\r
+         </fil:RenewGBLRequest>\r
+      </fil:RenewGBL>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/RenewGBL"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="45cb4deb-1336-457f-abcd-bce03404b4eb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UpdateAccountNumber TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="92efb4ff-43c9-4693-bbc7-b3b537c28238" name="UpdateAccountNumber"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>UpdateAccountNumber</con:operation><con:request name="UpdateAccountNumber" id="4b8c6fd4-03e7-4742-88de-074179e1d3c3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fil="http://FileLocalPCS/">\r
+   <soap:Header>\r
+      <PCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AdminUN>?</AdminUN>\r
+         <!--Optional:-->\r
+         <AdminPW>?</AdminPW>\r
+      </PCSSoapAuthenticationHeader>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <fil:UpdateAccountNumber>\r
+         <!--Optional:-->\r
+         <fil:UpdateAccountNumberRequest>\r
+            <!--Optional:-->\r
+            <fil:RequestXml>\r
+               <!--You may enter ANY elements at this point-->\r
+            </fil:RequestXml>\r
+         </fil:UpdateAccountNumberRequest>\r
+      </fil:UpdateAccountNumber>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/UpdateAccountNumber"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c155d842-543d-411a-a922-fe557adfcc5e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Version TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="e8c9078a-81c1-41e1-8074-c2bfe1773375" name="Version"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>Version</con:operation><con:request name="Version" id="8f7b70cf-eeed-4c5d-a908-70dda6e4a3a7"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">\r
+   &lt;soap:Header/>\r
+   &lt;soap:Body/>\r
+&lt;/soap:Envelope></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/Version"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="174e0288-ea80-40cc-b4e1-3fb2107b5f97" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="VersionChangeDescription TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="3942d64f-bbc2-41b7-b460-bfc2e815793e" name="VersionChangeDescription"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>wsHttpEndpoint</con:interface><con:operation>VersionChangeDescription</con:operation><con:request name="VersionChangeDescription" id="84bb1159-aaee-4e15-a895-a6c335ca6746"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://filelocalpcs.salestaxonline.com/PCS.svc</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">\r
+   &lt;soap:Header/>\r
+   &lt;soap:Body/>\r
+&lt;/soap:Envelope></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://FileLocalPCS/IPCS/VersionChangeDescription"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

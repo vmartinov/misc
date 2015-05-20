@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2afb3a0e-14e7-454e-a8d4-06beb4752c24" activeEnvironment="Default" name="SCS" resourceRoot="" soapui-version="5.1.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8c5d6a7a-ef89-4570-a906-f92d3639dd38" wsaVersion="NONE" name="BasicHttpsBinding_ISCSWebService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpsBinding_ISCSWebService" soapVersion="1_1" anonymous="optional" definition="https://taxportal.bellevuewa.gov/SCSWebService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://taxportal.bellevuewa.gov/SCSWebService.svc?wsdl"><con:part><con:url>https://taxportal.bellevuewa.gov/SCSWebService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SCSWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_ISCSWebService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      <xsd:import schemaLocation="https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SCSWcf"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISCSWebService_ValidateTaxPayerAccount2_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTaxPayerAccount2"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxPayerAccount2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTaxPayerAccount2Response"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxPayerForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTaxPayerForm"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxPayerForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTaxPayerFormResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateGBL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGBL"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateGBL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetTaxPayerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxPayerInfo"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetTaxPayerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxPayerInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PaymentRejectionReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentRejectionReport"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PaymentRejectionReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentRejectionReportResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_CalculateGBLRenewal_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateGBLRenewal"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_CalculateGBLRenewal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateGBLRenewalResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PrintGBL_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintGBL"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PrintGBL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatement"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatementResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISCSWebService">
+    <wsdl:operation name="ValidateTaxPayerAccount2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/ValidateTaxPayerAccount2" message="tns:ISCSWebService_ValidateTaxPayerAccount2_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/ValidateTaxPayerAccount2Response" message="tns:ISCSWebService_ValidateTaxPayerAccount2_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTaxPayerForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/ValidateTaxPayerForm" message="tns:ISCSWebService_ValidateTaxPayerForm_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/ValidateTaxPayerFormResponse" message="tns:ISCSWebService_ValidateTaxPayerForm_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGBL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/ValidateGBL" message="tns:ISCSWebService_ValidateGBL_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/ValidateGBLResponse" message="tns:ISCSWebService_ValidateGBL_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxPayerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/GetTaxPayerInfo" message="tns:ISCSWebService_GetTaxPayerInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/GetTaxPayerInfoResponse" message="tns:ISCSWebService_GetTaxPayerInfo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRejectionReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/PaymentRejectionReport" message="tns:ISCSWebService_PaymentRejectionReport_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/PaymentRejectionReportResponse" message="tns:ISCSWebService_PaymentRejectionReport_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateGBLRenewal">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/CalculateGBLRenewal" message="tns:ISCSWebService_CalculateGBLRenewal_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/CalculateGBLRenewalResponse" message="tns:ISCSWebService_CalculateGBLRenewal_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PrintGBL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/PrintGBL" message="tns:ISCSWebService_PrintGBL_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/PrintGBLResponse" message="tns:ISCSWebService_PrintGBL_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/GetStatement" message="tns:ISCSWebService_GetStatement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/GetStatementResponse" message="tns:ISCSWebService_GetStatement_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/GetData" message="tns:ISCSWebService_GetData_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/GetDataResponse" message="tns:ISCSWebService_GetData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISCSWebService/GetDataUsingDataContract" message="tns:ISCSWebService_GetDataUsingDataContract_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISCSWebService/GetDataUsingDataContractResponse" message="tns:ISCSWebService_GetDataUsingDataContract_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpsBinding_ISCSWebService" type="tns:ISCSWebService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_ISCSWebService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ValidateTaxPayerAccount2">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/ValidateTaxPayerAccount2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTaxPayerForm">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/ValidateTaxPayerForm" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGBL">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/ValidateGBL" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxPayerInfo">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/GetTaxPayerInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRejectionReport">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/PaymentRejectionReport" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateGBLRenewal">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/CalculateGBLRenewal" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintGBL">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/PrintGBL" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/GetStatement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/GetData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/ISCSWebService/GetDataUsingDataContract" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SCSWebService">
+    <wsdl:port name="BasicHttpsBinding_ISCSWebService" binding="tns:BasicHttpsBinding_ISCSWebService">
+      <soap:address location="https://taxportal.bellevuewa.gov/SCSWebService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+  <xs:import schemaLocation="https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SCSWcf"/>
+  <xs:element name="ValidateTaxPayerAccount2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="XMLString" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTaxPayerAccount2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxPayerAccount2Result" nillable="true" type="q1:ValidateTaxPayerAccountResult" xmlns:q1="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTaxPayerForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="XMLString" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTaxPayerFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxPayerFormResult" nillable="true" type="q2:ValidateTaxPayerFormResult" xmlns:q2="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGBL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="XMLString" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGBLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateGBLResult" nillable="true" type="q3:ValidateGblResult" xmlns:q3="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaxPayerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="StateTaxID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="InfoLevel" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaxPayerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaxPayerInfoResult" nillable="true" type="q4:ValidateTaxPayerInfoResult" xmlns:q4="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentRejectionReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="RejectionReport" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentRejectionReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaymentRejectionReportResult" nillable="true" type="q5:PaymentRejectionReportResult" xmlns:q5="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateGBLRenewal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="CalcGBL" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateGBLRenewalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculateGBLRenewalResult" nillable="true" type="q6:CalculateGblRenewalResult" xmlns:q6="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintGBL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="UBI" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="LicenseYear" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintGBLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrintGBLResult" nillable="true" type="q7:PrintGblResult" xmlns:q7="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="UBI" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="StatementCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStatementResult" nillable="true" type="q8:GetStatementResult" xmlns:q8="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="composite" nillable="true" type="q9:CompositeType" xmlns:q9="http://schemas.datacontract.org/2004/07/SCSWcf"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q10:CompositeType" xmlns:q10="http://schemas.datacontract.org/2004/07/SCSWcf"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SCSWcf.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SCSWcf.Entity">
+  <xs:complexType name="ValidateTaxPayerAccountResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxPayerAccountResult" nillable="true" type="tns:ValidateTaxPayerAccountResult"/>
+  <xs:complexType name="ValidateTaxPayerFormResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxPayerFormResult" nillable="true" type="tns:ValidateTaxPayerFormResult"/>
+  <xs:complexType name="ValidateGblResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BusLocationID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CityAccountNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StatusID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateGblResult" nillable="true" type="tns:ValidateGblResult"/>
+  <xs:complexType name="ValidateTaxPayerInfoResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxPayerInfoResult" nillable="true" type="tns:ValidateTaxPayerInfoResult"/>
+  <xs:complexType name="PaymentRejectionReportResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentRejectionReportResult" nillable="true" type="tns:PaymentRejectionReportResult"/>
+  <xs:complexType name="CalculateGblRenewalResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CalcGBL" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculateGblRenewalResult" nillable="true" type="tns:CalculateGblRenewalResult"/>
+  <xs:complexType name="PrintGblResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintGblResult" nillable="true" type="tns:PrintGblResult"/>
+  <xs:complexType name="GetStatementResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CurrentBalance" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StatementDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UBINumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatementResult" nillable="true" type="tns:GetStatementResult"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SCSWcf" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SCSWcf">
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://taxportal.bellevuewa.gov/SCSWebService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint></con:endpoints><con:operation id="1a7964eb-ed3c-4ae3-b4cb-cd2c0ac1a808" isOneWay="false" action="http://tempuri.org/ISCSWebService/CalculateGBLRenewal" name="CalculateGBLRenewal" bindingOperationName="CalculateGBLRenewal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="05bd0273-5f5f-41e6-bf18-f8a28d972144" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:CalculateGBLRenewal>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:CalcGBL>?</tem:CalcGBL>\r
+      </tem:CalculateGBLRenewal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/CalculateGBLRenewal"/></con:call></con:operation><con:operation id="eab5f60e-40a5-4c68-911c-d6b1bacdafa3" isOneWay="false" action="http://tempuri.org/ISCSWebService/GetData" name="GetData" bindingOperationName="GetData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9a864ae6-03f4-4963-b486-1eb74078210d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetData>\r
+         <!--Optional:-->\r
+         <tem:value>?</tem:value>\r
+      </tem:GetData>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/GetData"/></con:call></con:operation><con:operation id="51710e83-82e4-4d98-ba62-59dc86f50d73" isOneWay="false" action="http://tempuri.org/ISCSWebService/GetDataUsingDataContract" name="GetDataUsingDataContract" bindingOperationName="GetDataUsingDataContract" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="331e97d4-a9b7-4416-b679-9d0e9e32610d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:scs="http://schemas.datacontract.org/2004/07/SCSWcf">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetDataUsingDataContract>\r
+         <!--Optional:-->\r
+         <tem:composite>\r
+            <!--Optional:-->\r
+            <scs:BoolValue>?</scs:BoolValue>\r
+            <!--Optional:-->\r
+            <scs:StringValue>?</scs:StringValue>\r
+         </tem:composite>\r
+      </tem:GetDataUsingDataContract>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/GetDataUsingDataContract"/></con:call></con:operation><con:operation id="3a81aeb3-0b44-43c0-88a6-7f4b71ce6ff1" isOneWay="false" action="http://tempuri.org/ISCSWebService/GetStatement" name="GetStatement" bindingOperationName="GetStatement" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d9a51aa6-0d2a-4988-b0e4-2ccc246dad04" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetStatement>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:TaxAccountID>?</tem:TaxAccountID>\r
+         <!--Optional:-->\r
+         <tem:UBI>?</tem:UBI>\r
+         <!--Optional:-->\r
+         <tem:StatementCode>?</tem:StatementCode>\r
+      </tem:GetStatement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/GetStatement"/></con:call></con:operation><con:operation id="ffcbe6f5-76d3-4a36-9542-bc285f5f6a13" isOneWay="false" action="http://tempuri.org/ISCSWebService/GetTaxPayerInfo" name="GetTaxPayerInfo" bindingOperationName="GetTaxPayerInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0550c858-6a49-406b-ae85-61b1d606b193" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetTaxPayerInfo>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:TaxAccountID>?</tem:TaxAccountID>\r
+         <!--Optional:-->\r
+         <tem:StateTaxID>?</tem:StateTaxID>\r
+         <!--Optional:-->\r
+         <tem:InfoLevel>?</tem:InfoLevel>\r
+      </tem:GetTaxPayerInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/GetTaxPayerInfo"/></con:call></con:operation><con:operation id="9615cbf9-edf3-4623-88c5-2a1ca67e793b" isOneWay="false" action="http://tempuri.org/ISCSWebService/PaymentRejectionReport" name="PaymentRejectionReport" bindingOperationName="PaymentRejectionReport" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a6fd3ecb-3172-4499-ba43-23cd7179704c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:PaymentRejectionReport>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:RejectionReport>?</tem:RejectionReport>\r
+      </tem:PaymentRejectionReport>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/PaymentRejectionReport"/></con:call></con:operation><con:operation id="9682a333-00b6-4b9e-b6c6-25c73c5efaae" isOneWay="false" action="http://tempuri.org/ISCSWebService/PrintGBL" name="PrintGBL" bindingOperationName="PrintGBL" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e927f3ee-8685-41a0-93ab-a3e89329e255" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:PrintGBL>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:TaxAccountID>?</tem:TaxAccountID>\r
+         <!--Optional:-->\r
+         <tem:UBI>?</tem:UBI>\r
+         <!--Optional:-->\r
+         <tem:LicenseYear>?</tem:LicenseYear>\r
+      </tem:PrintGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/PrintGBL"/></con:call></con:operation><con:operation id="76c7187f-4c2a-468a-84f6-6265fb7e9aa0" isOneWay="false" action="http://tempuri.org/ISCSWebService/ValidateGBL" name="ValidateGBL" bindingOperationName="ValidateGBL" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="57a84c50-aea9-4817-9169-4928a0533a39" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateGBL>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:XMLString>?</tem:XMLString>\r
+      </tem:ValidateGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/ValidateGBL"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="713138d1-1458-48db-9f6b-2f392f249865" isOneWay="false" action="http://tempuri.org/ISCSWebService/ValidateTaxPayerAccount2" name="ValidateTaxPayerAccount2" bindingOperationName="ValidateTaxPayerAccount2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a7112292-4c00-4694-8b38-b9fce7987b3d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateTaxPayerAccount2>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>Test123</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:XMLString><![CDATA[<ValidateTaxpayerAccount>
+                                      <Primary_TaxAccountID>82700</Primary_TaxAccountID><FormCode>BELBO</FormCode><FilingFreqCode>Q</FilingFreqCode><Primary_UBI>6026310080010073</Primary_UBI>
+                                      <LegalName>Corporate, LLC</LegalName><TradeName>CorpTrade</TradeName><PhysicalAddress>123 Main St</PhysicalAddress><PhysicalZip>98121</PhysicalZip><PhysicalPhone>206-123-2154</PhysicalPhone>
+                                      <Consolidated>0</Consolidated>
+                                      <Locations><Location><TaxAccountID>92025</TaxAccountID><UBI>6026310080010294</UBI></Location></Locations>
+                                      </ValidateTaxpayerAccount>]]]]>><![CDATA[</tem:XMLString>\r
+      </tem:ValidateTaxPayerAccount2>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/ValidateTaxPayerAccount2"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6c911153-1a06-4e90-bc7a-f4dd3765fa12" isOneWay="false" action="http://tempuri.org/ISCSWebService/ValidateTaxPayerForm" name="ValidateTaxPayerForm" bindingOperationName="ValidateTaxPayerForm" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9af87e39-5626-4f3e-9ef9-96dd418d0f77" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateTaxPayerForm>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:XMLString>?</tem:XMLString>\r
+      </tem:ValidateTaxPayerForm>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISCSWebService/ValidateTaxPayerForm"/></con:call></con:operation></con:interface><con:testSuite id="75542852-0c03-4619-9503-62105c7d5885" name="BasicHttpsBinding_ISCSWebService TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0e0fc717-3cfa-418a-99cd-3c1bd062d1ea" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CalculateGBLRenewal TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="e230e8b1-18ec-4424-b163-efbd984779be" name="CalculateGBLRenewal"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>CalculateGBLRenewal</con:operation><con:request name="CalculateGBLRenewal" id="9f094fd0-694f-42d3-9dcb-0987afea0c6d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:CalculateGBLRenewal>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:CalcGBL>?</tem:CalcGBL>\r
+      </tem:CalculateGBLRenewal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/CalculateGBLRenewal"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ca5ef52a-d2a3-479d-83bf-ab6a52f1f8cf" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetData TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="33bbc3db-8d78-4a35-ae95-01c27c11e4ad" name="GetData"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>GetData</con:operation><con:request name="GetData" id="0eb6a136-c86e-4258-9ec6-358abade2284"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetData>\r
+         <!--Optional:-->\r
+         <tem:value>?</tem:value>\r
+      </tem:GetData>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/GetData"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e9bf2fa1-9753-44f8-88e5-1a6e2a90a313" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetDataUsingDataContract TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="725ce110-bfd2-4cf2-adfd-244592a8707b" name="GetDataUsingDataContract"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>GetDataUsingDataContract</con:operation><con:request name="GetDataUsingDataContract" id="9f82d968-96af-401e-b88f-b4106220e61a"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:scs="http://schemas.datacontract.org/2004/07/SCSWcf">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetDataUsingDataContract>\r
+         <!--Optional:-->\r
+         <tem:composite>\r
+            <!--Optional:-->\r
+            <scs:BoolValue>?</scs:BoolValue>\r
+            <!--Optional:-->\r
+            <scs:StringValue>?</scs:StringValue>\r
+         </tem:composite>\r
+      </tem:GetDataUsingDataContract>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/GetDataUsingDataContract"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0784b41e-459e-41f8-8a59-81fd334af697" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetStatement TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="aac7390f-88c1-491e-9c1e-1117cbee3f77" name="GetStatement"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>GetStatement</con:operation><con:request name="GetStatement" id="f19d026e-6d0a-4294-a593-15f9792c0247"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetStatement>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:TaxAccountID>?</tem:TaxAccountID>\r
+         <!--Optional:-->\r
+         <tem:UBI>?</tem:UBI>\r
+         <!--Optional:-->\r
+         <tem:StatementCode>?</tem:StatementCode>\r
+      </tem:GetStatement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/GetStatement"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c32576f2-b541-49f5-a7bc-6b47759eb668" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetTaxPayerInfo TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="3a3dde11-77ad-44c8-99a3-ff6ee41426e0" name="GetTaxPayerInfo"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>GetTaxPayerInfo</con:operation><con:request name="GetTaxPayerInfo" id="1c3636fe-d54a-4a9d-a15b-d56ca23e5311"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetTaxPayerInfo>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:TaxAccountID>?</tem:TaxAccountID>\r
+         <!--Optional:-->\r
+         <tem:StateTaxID>?</tem:StateTaxID>\r
+         <!--Optional:-->\r
+         <tem:InfoLevel>?</tem:InfoLevel>\r
+      </tem:GetTaxPayerInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/GetTaxPayerInfo"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f3ff8a2d-751f-42f2-beeb-1a5621e282bb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="PaymentRejectionReport TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="68fd7f81-fa85-48a4-8a55-e2f1292652ef" name="PaymentRejectionReport"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>PaymentRejectionReport</con:operation><con:request name="PaymentRejectionReport" id="acc17deb-ea56-4c10-84da-6e2759eb72e8"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:PaymentRejectionReport>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:RejectionReport>?</tem:RejectionReport>\r
+      </tem:PaymentRejectionReport>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/PaymentRejectionReport"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="87086e6a-98cf-45ce-aa13-6c88bbb6e3dc" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="PrintGBL TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="ecce5cc1-c689-45cf-9ae3-964a23402028" name="PrintGBL"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>PrintGBL</con:operation><con:request name="PrintGBL" id="5113bbd1-6dee-4932-b115-b8341f4d132f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:PrintGBL>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:TaxAccountID>?</tem:TaxAccountID>\r
+         <!--Optional:-->\r
+         <tem:UBI>?</tem:UBI>\r
+         <!--Optional:-->\r
+         <tem:LicenseYear>?</tem:LicenseYear>\r
+      </tem:PrintGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/PrintGBL"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c3731f1f-af42-4993-9653-176514e6ad2c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidateGBL TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="448d7f4f-b55d-4f8b-96b8-6c148847c885" name="ValidateGBL"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>ValidateGBL</con:operation><con:request name="ValidateGBL" id="b6e81bad-712d-402f-b331-526a58a93ea0"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateGBL>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:XMLString>?</tem:XMLString>\r
+      </tem:ValidateGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/ValidateGBL"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b9e4c380-604d-47bd-b81f-c9fd4f2eb5b6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidateTaxPayerAccount2 TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="5a82bfc0-40c6-4c9d-9597-fc4ad62d3767" name="ValidateTaxPayerAccount2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>ValidateTaxPayerAccount2</con:operation><con:request name="ValidateTaxPayerAccount2" id="b9527125-0038-4f44-b8e2-4fb2e480f34e"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateTaxPayerAccount2>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:XMLString>?</tem:XMLString>\r
+      </tem:ValidateTaxPayerAccount2>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/ValidateTaxPayerAccount2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ad01b019-bb5c-4528-a16d-b8832cbf5b47" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValidateTaxPayerForm TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="7149405e-1148-4475-bffc-31b24ff0406b" name="ValidateTaxPayerForm"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpsBinding_ISCSWebService</con:interface><con:operation>ValidateTaxPayerForm</con:operation><con:request name="ValidateTaxPayerForm" id="4f594b6f-b6f3-4d54-b8b0-a64183e949d4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://taxportal.bellevuewa.gov/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ValidateTaxPayerForm>\r
+         <!--Optional:-->\r
+         <tem:AccessKey>?</tem:AccessKey>\r
+         <!--Optional:-->\r
+         <tem:XMLString>?</tem:XMLString>\r
+      </tem:ValidateTaxPayerForm>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/ISCSWebService/ValidateTaxPayerForm"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

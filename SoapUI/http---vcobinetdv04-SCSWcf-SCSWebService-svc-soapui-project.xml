@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="83d85aba-5894-40c8-83e6-bc3f8b58a957" activeEnvironment="Default" name="http://vcobinetdv04/SCSWcf/SCSWebService.svc" resourceRoot="" soapui-version="5.1.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

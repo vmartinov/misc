@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="16897aeb-43fc-4e03-8e16-97ac085a3cc3" activeEnvironment="Default" name="scs_dev" resourceRoot="" soapui-version="5.1.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="005058e5-da6d-4ab6-937e-21a0dcce267d" wsaVersion="NONE" name="BasicHttpBinding_ISCSWebService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_ISCSWebService" soapVersion="1_1" anonymous="optional" definition="http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint></con:endpoints><con:operation id="415b8b44-7b92-4ce3-8d81-6b1da0482ece" isOneWay="false" action="http://BellevueSCS/ISCSWebService/CalculateGBLRenewal" name="CalculateGBLRenewal" bindingOperationName="CalculateGBLRenewal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1a8e583f-a8c3-4a75-b204-0efb5c7e8459" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:CalculateGBLRenewal>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:CalcGBL>?</bel:CalcGBL>\r
+      </bel:CalculateGBLRenewal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/CalculateGBLRenewal"/></con:call></con:operation><con:operation id="22b0ada9-c661-4e0b-bf5e-aa1494be5d8b" isOneWay="false" action="http://BellevueSCS/ISCSWebService/GetStatement" name="GetStatement" bindingOperationName="GetStatement" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="01da469a-24d0-4e52-88fd-126b0b762236" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:GetStatement>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:TaxAccountID>?</bel:TaxAccountID>\r
+         <!--Optional:-->\r
+         <bel:UBI>?</bel:UBI>\r
+         <!--Optional:-->\r
+         <bel:StatementCode>?</bel:StatementCode>\r
+      </bel:GetStatement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/GetStatement"/></con:call></con:operation><con:operation id="900aaf5e-c01c-4b4f-add2-522d20362187" isOneWay="false" action="http://BellevueSCS/ISCSWebService/GetTaxPayerInfo" name="GetTaxPayerInfo" bindingOperationName="GetTaxPayerInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a30c7559-0492-4a95-aeb2-b3e9162ded33" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:GetTaxPayerInfo>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:TaxAccountID>?</bel:TaxAccountID>\r
+         <!--Optional:-->\r
+         <bel:StateTaxID>?</bel:StateTaxID>\r
+         <!--Optional:-->\r
+         <bel:InfoLevel>?</bel:InfoLevel>\r
+      </bel:GetTaxPayerInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/GetTaxPayerInfo"/></con:call></con:operation><con:operation id="8c1e900b-22fa-468f-a523-b951250f0ff3" isOneWay="false" action="http://BellevueSCS/ISCSWebService/PaymentRejectionReport" name="PaymentRejectionReport" bindingOperationName="PaymentRejectionReport" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ebdd65ea-28ce-4889-8887-6c375d6cd742" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:PaymentRejectionReport>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:RejectionReport>?</bel:RejectionReport>\r
+      </bel:PaymentRejectionReport>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/PaymentRejectionReport"/></con:call></con:operation><con:operation id="c4f0c308-6c57-4a8b-89dd-abfe0259ec36" isOneWay="false" action="http://BellevueSCS/ISCSWebService/PrintGBL" name="PrintGBL" bindingOperationName="PrintGBL" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4f4c27b6-8a99-47dc-a6cf-5d8baa9f03c7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:PrintGBL>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:TaxAccountID>?</bel:TaxAccountID>\r
+         <!--Optional:-->\r
+         <bel:UBI>?</bel:UBI>\r
+         <!--Optional:-->\r
+         <bel:LicenseYear>?</bel:LicenseYear>\r
+      </bel:PrintGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/PrintGBL"/></con:call></con:operation><con:operation id="a927b04f-7296-4503-8d7f-d182ce12abf5" isOneWay="false" action="http://BellevueSCS/ISCSWebService/ValidateGBL" name="ValidateGBL" bindingOperationName="ValidateGBL" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="da2dcbf9-fbf2-41d2-9ca8-64f688bbf993" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:ValidateGBL>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:XMLString>?</bel:XMLString>\r
+      </bel:ValidateGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/ValidateGBL"/></con:call></con:operation><con:operation id="b570773b-b46c-49de-9914-84ca2c61b05b" isOneWay="false" action="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2" name="ValidateTaxpayerAccount2" bindingOperationName="ValidateTaxpayerAccount2" type="Request-Response" outputName="ValidateTaxpayerAccount2Response" inputName="ValidateTaxpayerAccount2Request" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ac82028-1713-4da3-b349-ed7467ac2d23" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header>\r
+      <SCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AccessKey>?</AccessKey>\r
+      </SCSSoapAuthenticationHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <bel:ValidateTaxpayerAccount2>\r
+         <!--Optional:-->\r
+         <bel:ValidateTaxpayerAccount2Request>\r
+            <!--Optional:-->\r
+            <bel:RequestXml>\r
+               <!--You may enter ANY elements at this point-->\r
+            </bel:RequestXml>\r
+         </bel:ValidateTaxpayerAccount2Request>\r
+      </bel:ValidateTaxpayerAccount2>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2"/></con:call></con:operation><con:operation id="0c0bb5e3-6538-40cc-9b98-4cb27e09d070" isOneWay="false" action="http://BellevueSCS/ISCSWebService/ValidateTaxPayerForm" name="ValidateTaxPayerForm" bindingOperationName="ValidateTaxPayerForm" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8fb9f000-0832-404e-9373-45c8c3c7351a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://vcobinetdv04/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:ValidateTaxPayerForm>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:XMLString>?</bel:XMLString>\r
+      </bel:ValidateTaxPayerForm>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/ValidateTaxPayerForm"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="4e6a3e09-0088-4b55-8666-6bbb7e61839b" wsaVersion="NONE" name="BasicHttpsBinding_ISCSWebService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpsBinding_ISCSWebService" soapVersion="1_1" anonymous="optional" definition="http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl"><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SCSWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:i0="http://BellevueSCS/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_ISCSWebService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://BellevueSCS/" location="http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl=wsdl0"/>
+  <wsdl:types/>
+  <wsdl:binding name="BasicHttpBinding_ISCSWebService" type="i0:ISCSWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ValidateTaxpayerAccount2">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2" style="document"/>
+      <wsdl:input name="ValidateTaxpayerAccount2Request">
+        <soap:header message="i0:ValidateTaxpayerAccount2Request_Headers" part="Header" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateTaxpayerAccount2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTaxPayerForm">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/ValidateTaxPayerForm" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGBL">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/ValidateGBL" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxPayerInfo">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/GetTaxPayerInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRejectionReport">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/PaymentRejectionReport" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateGBLRenewal">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/CalculateGBLRenewal" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintGBL">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/PrintGBL" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/GetStatement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_ISCSWebService" type="i0:ISCSWebService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_ISCSWebService_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ValidateTaxpayerAccount2">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2" style="document"/>
+      <wsdl:input name="ValidateTaxpayerAccount2Request">
+        <soap:header message="i0:ValidateTaxpayerAccount2Request_Headers" part="Header" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateTaxpayerAccount2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTaxPayerForm">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/ValidateTaxPayerForm" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGBL">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/ValidateGBL" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxPayerInfo">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/GetTaxPayerInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRejectionReport">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/PaymentRejectionReport" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateGBLRenewal">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/CalculateGBLRenewal" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintGBL">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/PrintGBL" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <soap:operation soapAction="http://BellevueSCS/ISCSWebService/GetStatement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SCSWebService">
+    <wsdl:port name="BasicHttpBinding_ISCSWebService" binding="tns:BasicHttpBinding_ISCSWebService">
+      <soap:address location="http://vcobinetdv04/SCSWcf/SCSWebService.svc"/>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_ISCSWebService" binding="tns:BasicHttpsBinding_ISCSWebService">
+      <soap:address location="https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://BellevueSCS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://BellevueSCS/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://BellevueSCS/Imports">
+      <xsd:import schemaLocation="http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd0" namespace="http://BellevueSCS/"/>
+      <xsd:import schemaLocation="http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd2"/>
+      <xsd:import schemaLocation="http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+      <xsd:import schemaLocation="http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateTaxpayerAccount2Request">
+    <wsdl:part name="parameters" element="tns:ValidateTaxpayerAccount2"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateTaxpayerAccount2Request_Headers">
+    <wsdl:part name="Header" element="SCSSoapAuthenticationHeader"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateTaxpayerAccount2Response">
+    <wsdl:part name="parameters" element="tns:ValidateTaxpayerAccount2Response"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxPayerForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTaxPayerForm"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateTaxPayerForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTaxPayerFormResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateGBL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGBL"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_ValidateGBL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetTaxPayerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxPayerInfo"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetTaxPayerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxPayerInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PaymentRejectionReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentRejectionReport"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PaymentRejectionReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentRejectionReportResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_CalculateGBLRenewal_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateGBLRenewal"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_CalculateGBLRenewal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateGBLRenewalResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PrintGBL_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintGBL"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_PrintGBL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintGBLResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatement"/>
+  </wsdl:message>
+  <wsdl:message name="ISCSWebService_GetStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatementResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISCSWebService">
+    <wsdl:operation name="ValidateTaxpayerAccount2">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2" name="ValidateTaxpayerAccount2Request" message="tns:ValidateTaxpayerAccount2Request"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2Response" name="ValidateTaxpayerAccount2Response" message="tns:ValidateTaxpayerAccount2Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTaxPayerForm">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/ValidateTaxPayerForm" message="tns:ISCSWebService_ValidateTaxPayerForm_InputMessage"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/ValidateTaxPayerFormResponse" message="tns:ISCSWebService_ValidateTaxPayerForm_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGBL">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/ValidateGBL" message="tns:ISCSWebService_ValidateGBL_InputMessage"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/ValidateGBLResponse" message="tns:ISCSWebService_ValidateGBL_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxPayerInfo">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/GetTaxPayerInfo" message="tns:ISCSWebService_GetTaxPayerInfo_InputMessage"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/GetTaxPayerInfoResponse" message="tns:ISCSWebService_GetTaxPayerInfo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRejectionReport">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/PaymentRejectionReport" message="tns:ISCSWebService_PaymentRejectionReport_InputMessage"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/PaymentRejectionReportResponse" message="tns:ISCSWebService_PaymentRejectionReport_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateGBLRenewal">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/CalculateGBLRenewal" message="tns:ISCSWebService_CalculateGBLRenewal_InputMessage"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/CalculateGBLRenewalResponse" message="tns:ISCSWebService_CalculateGBLRenewal_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PrintGBL">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/PrintGBL" message="tns:ISCSWebService_PrintGBL_InputMessage"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/PrintGBLResponse" message="tns:ISCSWebService_PrintGBL_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatement">
+      <wsdl:input wsaw:Action="http://BellevueSCS/ISCSWebService/GetStatement" message="tns:ISCSWebService_GetStatement_InputMessage"/>
+      <wsdl:output wsaw:Action="http://BellevueSCS/ISCSWebService/GetStatementResponse" message="tns:ISCSWebService_GetStatement_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://BellevueSCS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://BellevueSCS/">
+  <xs:import schemaLocation="http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+  <xs:import schemaLocation="http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+  <xs:element name="ValidateTaxpayerAccount2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxpayerAccount2Request" nillable="true" type="tns:ValidateTaxpayerAccount2RequestDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateTaxpayerAccount2RequestDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestXml" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxpayerAccount2RequestDetail" nillable="true" type="tns:ValidateTaxpayerAccount2RequestDetail"/>
+  <xs:element name="ValidateTaxpayerAccount2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxpayerAccount2Result" nillable="true" type="tns:ValidateTaxpayerAccount2ResponseDetail"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ValidateTaxpayerAccount2ResponseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="q1:Code" xmlns:q1="http://schemas.datacontract.org/2004/07/SCSWcf.Response"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxpayerAccount2ResponseDetail" nillable="true" type="tns:ValidateTaxpayerAccount2ResponseDetail"/>
+  <xs:element name="ValidateTaxPayerForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="XMLString" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTaxPayerFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateTaxPayerFormResult" nillable="true" type="q2:ValidateTaxPayerFormResult" xmlns:q2="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGBL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="XMLString" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGBLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateGBLResult" nillable="true" type="q3:ValidateGblResult" xmlns:q3="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaxPayerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="StateTaxID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="InfoLevel" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaxPayerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaxPayerInfoResult" nillable="true" type="q4:ValidateTaxPayerInfoResult" xmlns:q4="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentRejectionReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="RejectionReport" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentRejectionReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaymentRejectionReportResult" nillable="true" type="q5:PaymentRejectionReportResult" xmlns:q5="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateGBLRenewal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="CalcGBL" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateGBLRenewalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculateGBLRenewalResult" nillable="true" type="q6:CalculateGblRenewalResult" xmlns:q6="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintGBL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="UBI" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="LicenseYear" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintGBLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrintGBLResult" nillable="true" type="q7:PrintGblResult" xmlns:q7="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="TaxAccountID" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="UBI" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="StatementCode" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStatementResult" nillable="true" type="q8:GetStatementResult" xmlns:q8="http://schemas.datacontract.org/2004/07/SCSWcf.Entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SCSWcf.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SCSWcf.Response">
+  <xs:simpleType name="Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="FAIL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Code" nillable="true" type="tns:Code"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SCSWcf.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SCSWcf.Entity">
+  <xs:complexType name="ValidateTaxPayerFormResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxPayerFormResult" nillable="true" type="tns:ValidateTaxPayerFormResult"/>
+  <xs:complexType name="ValidateGblResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BusLocationID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CityAccountNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StatusID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateGblResult" nillable="true" type="tns:ValidateGblResult"/>
+  <xs:complexType name="ValidateTaxPayerInfoResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Validation" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateTaxPayerInfoResult" nillable="true" type="tns:ValidateTaxPayerInfoResult"/>
+  <xs:complexType name="PaymentRejectionReportResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentRejectionReportResult" nillable="true" type="tns:PaymentRejectionReportResult"/>
+  <xs:complexType name="CalculateGblRenewalResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CalcGBL" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculateGblRenewalResult" nillable="true" type="tns:CalculateGblRenewalResult"/>
+  <xs:complexType name="PrintGblResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInformation" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintGblResult" nillable="true" type="tns:PrintGblResult"/>
+  <xs:complexType name="GetStatementResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CurrentBalance" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StatementDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UBINumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatementResult" nillable="true" type="tns:GetStatementResult"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SCSSoapAuthenticationHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessKey" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SCSSoapAuthenticationHeader" nillable="true" type="SCSSoapAuthenticationHeader"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://vcobinetdv04/SCSWcf/SCSWebService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint></con:endpoints><con:operation id="e5aa623e-0bd8-4809-9444-7f51aaae9126" isOneWay="false" action="http://BellevueSCS/ISCSWebService/CalculateGBLRenewal" name="CalculateGBLRenewal" bindingOperationName="CalculateGBLRenewal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f29ad220-d431-4133-81d6-87933d16c8ff" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:CalculateGBLRenewal>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:CalcGBL>?</bel:CalcGBL>\r
+      </bel:CalculateGBLRenewal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/CalculateGBLRenewal"/></con:call></con:operation><con:operation id="4923db7f-8753-4f4a-9304-93554ae983e8" isOneWay="false" action="http://BellevueSCS/ISCSWebService/GetStatement" name="GetStatement" bindingOperationName="GetStatement" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0e715c6a-f5d7-4c14-9da9-cc283766d2ec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:GetStatement>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:TaxAccountID>?</bel:TaxAccountID>\r
+         <!--Optional:-->\r
+         <bel:UBI>?</bel:UBI>\r
+         <!--Optional:-->\r
+         <bel:StatementCode>?</bel:StatementCode>\r
+      </bel:GetStatement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/GetStatement"/></con:call></con:operation><con:operation id="aead84fa-2c42-4d79-98cd-62b9598ef940" isOneWay="false" action="http://BellevueSCS/ISCSWebService/GetTaxPayerInfo" name="GetTaxPayerInfo" bindingOperationName="GetTaxPayerInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="416805e5-7374-45ae-a72c-0a36ac7b9d90" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:GetTaxPayerInfo>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:TaxAccountID>?</bel:TaxAccountID>\r
+         <!--Optional:-->\r
+         <bel:StateTaxID>?</bel:StateTaxID>\r
+         <!--Optional:-->\r
+         <bel:InfoLevel>?</bel:InfoLevel>\r
+      </bel:GetTaxPayerInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/GetTaxPayerInfo"/></con:call></con:operation><con:operation id="fd44e4cc-267f-44cd-9fee-fa5ec0e2a199" isOneWay="false" action="http://BellevueSCS/ISCSWebService/PaymentRejectionReport" name="PaymentRejectionReport" bindingOperationName="PaymentRejectionReport" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9553223b-afc7-4936-b1f6-779a76f73361" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:PaymentRejectionReport>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:RejectionReport>?</bel:RejectionReport>\r
+      </bel:PaymentRejectionReport>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/PaymentRejectionReport"/></con:call></con:operation><con:operation id="c602b81f-e0c1-4e52-9c10-a284892557af" isOneWay="false" action="http://BellevueSCS/ISCSWebService/PrintGBL" name="PrintGBL" bindingOperationName="PrintGBL" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="62b42348-e3a2-4aad-9646-66c180260b60" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:PrintGBL>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:TaxAccountID>?</bel:TaxAccountID>\r
+         <!--Optional:-->\r
+         <bel:UBI>?</bel:UBI>\r
+         <!--Optional:-->\r
+         <bel:LicenseYear>?</bel:LicenseYear>\r
+      </bel:PrintGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/PrintGBL"/></con:call></con:operation><con:operation id="9479da69-a489-41ec-92ef-ff25cf3b71cb" isOneWay="false" action="http://BellevueSCS/ISCSWebService/ValidateGBL" name="ValidateGBL" bindingOperationName="ValidateGBL" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="602dfbd0-e35f-4110-8add-6cb890c25ec3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:ValidateGBL>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:XMLString>?</bel:XMLString>\r
+      </bel:ValidateGBL>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/ValidateGBL"/></con:call></con:operation><con:operation id="14a58332-15ae-4da3-bcc1-5dd177d9d5c9" isOneWay="false" action="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2" name="ValidateTaxpayerAccount2" bindingOperationName="ValidateTaxpayerAccount2" type="Request-Response" outputName="ValidateTaxpayerAccount2Response" inputName="ValidateTaxpayerAccount2Request" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b3f56dfc-d6e1-43ff-9201-a4b5fc5af21d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header>\r
+      <SCSSoapAuthenticationHeader>\r
+         <!--Optional:-->\r
+         <AccessKey>?</AccessKey>\r
+      </SCSSoapAuthenticationHeader>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <bel:ValidateTaxpayerAccount2>\r
+         <!--Optional:-->\r
+         <bel:ValidateTaxpayerAccount2Request>\r
+            <!--Optional:-->\r
+            <bel:RequestXml>\r
+               <!--You may enter ANY elements at this point-->\r
+            </bel:RequestXml>\r
+         </bel:ValidateTaxpayerAccount2Request>\r
+      </bel:ValidateTaxpayerAccount2>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/ValidateTaxpayerAccount2"/></con:call></con:operation><con:operation id="024ca3a0-40ae-4444-89ef-e73aef4e41ef" isOneWay="false" action="http://BellevueSCS/ISCSWebService/ValidateTaxPayerForm" name="ValidateTaxPayerForm" bindingOperationName="ValidateTaxPayerForm" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1dc2d46b-dcc8-4226-afed-697daab74bd8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://vcobinetdv04.ci.bellevue.wa.us/SCSWcf/SCSWebService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bel="http://BellevueSCS/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bel:ValidateTaxPayerForm>\r
+         <!--Optional:-->\r
+         <bel:AccessKey>?</bel:AccessKey>\r
+         <!--Optional:-->\r
+         <bel:XMLString>?</bel:XMLString>\r
+      </bel:ValidateTaxPayerForm>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://BellevueSCS/ISCSWebService/ValidateTaxPayerForm"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
