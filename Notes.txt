@@ -1,0 +1,11 @@
+Attn -> AddressLine3
+Bldg/Suite -> AddressLine2
+
+1. Table
+2. History Table
+3. SPROCs
+4. Entity Class
+5. History Class
+6. Adapter Class
+7. Core.js
+8. Static Struct.Fields
