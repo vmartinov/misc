@@ -1,0 +1,104 @@
+[TestMethod]
+        public void UpdatePortalTaxReturnTest()
+        {
+            var tr = new TaxReturn();
+            tr.GetById(452807);
+            try
+            {
+                const string subjectKeyIdentifier = "d3bb3ea9dc8cdbc4425f2ef95f8f947d61b9df35";
+
+                X509Store store = new X509Store("My", StoreLocation.CurrentUser);
+                store.Open(OpenFlags.ReadOnly);
+
+                var certificates = store.Certificates.Find(X509FindType.FindBySubjectKeyIdentifier, subjectKeyIdentifier, true);
+                var certificate = certificates[0];
+
+                var request = (HttpWebRequest)WebRequest.Create("https://filelocalpcs.salestaxonline.com/PCS.svc");
+                request.ClientCertificates.Add(certificate);
+                request.ContentType = @"application/soap+xml;charset=UTF-8;action=""http://FileLocalPCS/IPCS/ChangeFormStatus""";
+                request.Accept = "text/xml";
+                request.Method = WebRequestMethods.Http.Post;
+                
+                //request.Headers.Add(@"SOAP:Action"); 
+               
+
+                const string userName = "BellevuePCS";
+                const string password = "Pr4x1s";
+                const string portalTaxReturnId = "387";
+                const string approved = "12";
+
+                //var header = string.Format(@"<soap:Header><PCSSoapAuthenticationHeader><AdminUN>{0}</AdminUN><AdminPW>{1}</AdminPW></PCSSoapAuthenticationHeader></soap:Header>", userName, password);
+                //var body = string.Format(@"<soap:Body><fil:ChangeFormStatus><fil:ChangeFormStatusRequest><fil:ReturnInfoID>0</fil:ReturnInfoID><fil:FormID>{0}</fil:FormID><fil:StatusID>{1}</fil:StatusID><fil:Comments></fil:Comments></fil:ChangeFormStatusRequest></fil:ChangeFormStatus></soap:Body>", portalTaxReturnId, approved);
+                var header = @"<soap:Header></soap:Header>";
+                var body = string.Format(@"<soap:Body><ChangeFormStatus><ChangeFormStatusRequest><ReturnInfoID>1100</ReturnInfoID><FormID>{0}</FormID><StatusID>{1}</StatusID><Comments></Comments></ChangeFormStatusRequest></ChangeFormStatus></soap:Body>", portalTaxReturnId, approved);
+                
+                //var envelope = string.Format(@"<soap:Envelope xmlns:soap=""http://www.w3.org/2003/05/soap-envelope"" xmlns:fil=""http://FileLocalPCS/"">{0}{1}</soap:Envelope>", header, body);
+
+                var x =
+                    @"<soap:Envelope xmlns:soap=""http://www.w3.org/2003/05/soap-envelope"" xmlns:fil=""http://FileLocalPCS/"">
+                        <soap:Header xmlns:wsa=""http://www.w3.org/2005/08/addressing"">
+                          <PCSSoapAuthenticationHeader>
+                             <!--Optional:-->
+                             <AdminUN>BellevuePCS</AdminUN>
+                             <!--Optional:-->
+                             <AdminPW>Pr4x1s</AdminPW>
+                          </PCSSoapAuthenticationHeader>
+                       <wsa:Action>http://FileLocalPCS/IPCS/ChangeFormStatus</wsa:Action><wsa:To>https://filelocalpcs.salestaxonline.com/PCS.svc</wsa:To></soap:Header>
+                       <soap:Body>
+                          <fil:ChangeFormStatus>
+                             <!--Optional:-->
+                             <fil:ChangeFormStatusRequest>
+                                <!--Optional:-->
+                                <fil:ReturnInfoID>1100</fil:ReturnInfoID>
+                                <!--Optional:-->
+                                <fil:FormID>388</fil:FormID>
+                                <!--Optional:-->
+                                <fil:StatusID>20</fil:StatusID>
+                                <!--Optional:-->
+                                <fil:Comments>Test Comment</fil:Comments>
+                             </fil:ChangeFormStatusRequest>
+                          </fil:ChangeFormStatus>
+                       </soap:Body>
+                    </soap:Envelope>";
+
+
+                var soapEnvelopeXml = new XmlDocument();
+                soapEnvelopeXml.LoadXml(x);
+
+                using (var stream = request.GetRequestStream())
+                {
+                    soapEnvelopeXml.Save(stream);
+                }
+                //request.Method = WebRequestMethods.Http.Post;
+                //request.ContentType = "text/html";
+
+
+               
+                string result = null;
+                using (var response = (HttpWebResponse)request.GetResponse())
+                {
+                    var stream = response.GetResponseStream();
+                    if (stream != null)
+                    {
+                        using (var reader = new StreamReader(stream))
+                        {
+                            result = reader.ReadToEnd();
+                        }
+                    }
+                    
+                }
+                
+               
+                Assert.IsTrue(result != null);
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.ToString());
+           
+            } 
+
+        }
+
+    }
