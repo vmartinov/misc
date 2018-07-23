@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />
+    <add key="CallerIp" value="64.66.71.130" />
+    <add key="AccessKey" value="Test123" />
+    <add key="ValidateCallerIp" value="No" />
+    <add key="SearchAdvancedQueryBase" value="SELECT * FROM Bellevue.%ENTITY% WHERE " />
+  </appSettings>
+  <!--
+    For a description of web.config changes see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.7" />
+      </system.Web>
+  -->
+  <system.web>
+    <compilation targetFramework="4.7" />
+    <httpRuntime targetFramework="4.5" />
+    <customErrors mode="Off" />
+    <!--<authorization>
+      <deny users="?"/>
+    </authorization>-->
+  </system.web>
+  <system.serviceModel>
+    <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />
+    <bindings>
+      <wsHttpBinding>
+        <binding name="wsHttpEndpointBinding">
+          <!--<security mode="Transport">
+            <transport clientCredentialType="Certificate" />
+          </security>-->
+          <security mode="None">
+          	<transport clientCredentialType="None"/>
+          	<message establishSecurityContext="false"/>
+        </security>
+        </binding>
+      </wsHttpBinding>
+    </bindings>
+    <services>
+      <service name="SCSWcf.SCSWebService" behaviorConfiguration="wsHttpEndpointBehavior">
+        <host>
+          <baseAddresses>
+            <add baseAddress="https://rv12rwebt03/SCSWcf_Dev/SCSWebService.svc" />
+          </baseAddresses>
+        </host>
+        <endpoint address="" binding="wsHttpBinding" bindingConfiguration="wsHttpEndpointBinding" name="wsHttpEndpoint" contract="SCSWcf.ISCS" />
+        <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+      </service>
+    </services>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="wsHttpEndpointBehavior">
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="false" />
+          <serviceDebug includeExceptionDetailInFaults="true" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <diagnostics>
+      <messageLogging logEntireMessage="true" logMalformedMessages="true" logMessagesAtServiceLevel="false" logMessagesAtTransportLevel="true" maxMessagesToLog="2147483647" maxSizeOfMessageToLog="2147483647" />
+    </diagnostics>
+  </system.serviceModel>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true" />
+    <directoryBrowse enabled="true" />
+    <!--<handlers>
+      <remove name="svc-Integrated-4.0" />
+      <add name="svc-Integrated-4.0" path="*.svc" verb="*" type="System.ServiceModel.Activation.ServiceHttpHandlerFactory, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" resourceType="File" preCondition="integratedMode" />
+    </handlers>-->
+  </system.webServer>
+  <connectionStrings>
+    <add name="Praxis" connectionString="Data Source=rv12rsqlt01\test2016;Initial Catalog=PRAXIS_DEV;Persist Security Info=True;User ID=PraxisUser;Password=1forthemoney;App=Praxis" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <system.diagnostics>
+    <sources>
+      <source name="System.ServiceModel.MessageLogging" switchValue="All">
+        <listeners>
+          <add name="messages" type="System.Diagnostics.XmlWriterTraceListener" initializeData="E:\IISLogFile\PRAXISSCSWcf\messages.svclog" />
+        </listeners>
+      </source>
+    </sources>
+    <trace autoflush="true" />
+  </system.diagnostics>
+</configuration>
+<!--ProjectGuid: 9082BAB0-F6D2-4A47-A0D1-ECF3068F0D26-->
